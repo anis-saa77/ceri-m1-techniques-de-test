@@ -39,3 +39,4 @@ public class IPokemonTrainerFactoryTest {
         assertNotNull(trainer.getPokedex());
     }
 }
+
