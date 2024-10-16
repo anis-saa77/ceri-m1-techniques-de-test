@@ -4,38 +4,50 @@ import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 public class IPokemonMetadataProviderTest extends TestCase {
 
     private IPokemonMetadataProvider metadataProvider;
+    private PokemonLoader pokemonLoader = new PokemonLoader();
+    private List<Pokemon> pokemons ;
 
     @Before
     public void setUp() throws Exception {
         super.setUp();
         metadataProvider = mock(IPokemonMetadataProvider.class);
+        pokemons = pokemonLoader.loadPokemons("pokedexfile");
     }
 
     @Test
     public void testGetPokemonMetadata() throws PokedexException {
-        // Données simulées pour un Pokémon spécifique
-        int index = 1;
-        PokemonMetadata expectedMetadata = new PokemonMetadata(index, "Bulbizarre", 126, 126, 90);
+        for (Pokemon pokemon : pokemons) {
+            int index = pokemon.getIndex();
+            PokemonMetadata expectedMetadata = new PokemonMetadata(
+                    pokemon.getIndex(),
+                    pokemon.getName(),
+                    pokemon.getAttack(),
+                    pokemon.getDefense(),
+                    pokemon.getStamina()
+            );
 
-        // Simulation du comportement du mock
-        when(metadataProvider.getPokemonMetadata(index)).thenReturn(expectedMetadata);
+            // Simulation du comportement du mock pour chaque Pokémon
+            when(metadataProvider.getPokemonMetadata(index)).thenReturn(expectedMetadata);
 
-        // Appel de la méthode à tester
-        PokemonMetadata actualMetadata = metadataProvider.getPokemonMetadata(index);
+            // Appel de la méthode à tester
+            PokemonMetadata actualMetadata = metadataProvider.getPokemonMetadata(index);
 
-        // Vérification des résultats
-        assertNotNull(actualMetadata);
-        assertEquals(expectedMetadata.getIndex(), actualMetadata.getIndex());
-        assertEquals(expectedMetadata.getName(), actualMetadata.getName());
-        assertEquals(expectedMetadata.getAttack(), actualMetadata.getAttack());
-        assertEquals(expectedMetadata.getDefense(), actualMetadata.getDefense());
-        assertEquals(expectedMetadata.getStamina(), actualMetadata.getStamina());
+            // Vérification des résultats
+            assertNotNull(actualMetadata);
+            assertEquals(expectedMetadata.getIndex(), actualMetadata.getIndex());
+            assertEquals(expectedMetadata.getName(), actualMetadata.getName());
+            assertEquals(expectedMetadata.getAttack(), actualMetadata.getAttack());
+            assertEquals(expectedMetadata.getDefense(), actualMetadata.getDefense());
+            assertEquals(expectedMetadata.getStamina(), actualMetadata.getStamina());
+        }
     }
 
     @Test

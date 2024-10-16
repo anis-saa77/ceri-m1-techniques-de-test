@@ -13,14 +13,12 @@ public class IPokemonTrainerFactoryTest {
     private IPokemonTrainerFactory pokemonTrainerFactory;
     private IPokedexFactory pokedexFactory;
     private IPokedex pokedex;
-
     @Before
     public void setUp() throws Exception {
         pokedexFactory = mock(IPokedexFactory.class);
         pokemonTrainerFactory = mock(IPokemonTrainerFactory.class);
         pokedex = mock(IPokedex.class);
     }
-
     @Test
     public void testCreateTrainer() {
         // Création d'un dresseur

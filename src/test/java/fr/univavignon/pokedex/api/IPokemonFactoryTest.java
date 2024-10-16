@@ -4,34 +4,34 @@ import junit.framework.TestCase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class IPokemonFactoryTest extends TestCase {
     private IPokemonFactory pokemonFactory;
+    PokemonLoader pokemonLoader = new PokemonLoader();
+    List<Pokemon> pokemons ;
     @BeforeEach
     public void setUp() throws Exception {
         pokemonFactory = mock(IPokemonFactory.class);
+        pokemons = pokemonLoader.loadPokemons("pokedexfile");
     }
     @Test
     public void testCreatePokemon() {
-        Pokemon bulbizarre = new Pokemon(1, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
-        int index = 1;
-        int cp = 613;
-        int hp = 64;
-        int dust = 4000;
-        int candy = 4;
-        when(pokemonFactory.createPokemon(index, cp, hp, dust, candy)).thenReturn(bulbizarre);
+        for(Pokemon loadePokemon : pokemons){
+            when(pokemonFactory.createPokemon(loadePokemon.getIndex(), loadePokemon.getCp(), loadePokemon.getHp(), loadePokemon.getDust(), loadePokemon.getCandy())).thenReturn(loadePokemon);
+            Pokemon pokemon = pokemonFactory.createPokemon(loadePokemon.getIndex(), loadePokemon.getCp(), loadePokemon.getHp(), loadePokemon.getDust(), loadePokemon.getCandy());
 
-        Pokemon pokemon = pokemonFactory.createPokemon(index, cp, hp, dust, candy);
-
-        // Vérification des attributs du Pokémon
-        assertNotNull(pokemon);
-        assertEquals(pokemon, bulbizarre);
-        assertEquals(index, pokemon.getIndex());
-        assertEquals(cp, pokemon.getCp());
-        assertEquals(hp, pokemon.getHp());
-        assertEquals(dust, pokemon.getDust());
-        assertEquals(candy, pokemon.getCandy());
+            // Vérification des attributs du Pokémon
+            assertNotNull(pokemon);
+            assertEquals(loadePokemon, pokemon);
+            assertEquals(loadePokemon.getIndex(), pokemon.getIndex());
+            assertEquals(loadePokemon.getCp(), pokemon.getCp());
+            assertEquals(loadePokemon.getHp(), pokemon.getHp());
+            assertEquals(loadePokemon.getDust(), pokemon.getDust());
+            assertEquals(loadePokemon.getCandy(), pokemon.getCandy());
+        }
     }
 }

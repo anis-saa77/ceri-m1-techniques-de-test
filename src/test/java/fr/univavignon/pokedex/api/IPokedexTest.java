@@ -13,9 +13,8 @@ import static org.mockito.Mockito.*;
 
 public class IPokedexTest{
     private IPokedex pokedex;
-    PokemonLoader pokemonLoader = new PokemonLoader();
-    List<Pokemon> pokemons ;
-
+    private PokemonLoader pokemonLoader = new PokemonLoader();
+    private List<Pokemon> pokemons ;
     @Before
     public void setUp() {
         pokedex = Mockito.mock(IPokedex.class);
@@ -24,21 +23,18 @@ public class IPokedexTest{
 
     @Test
     public void testSize() {
-        Pokemon pokemon1 = pokemons.get(0);
-        Pokemon pokemon2 = pokemons.get(1);
+        when(pokedex.size()).thenReturn(0);
+        assertEquals(0, pokedex.size());
+        for (int i = 0; i < pokemons.size(); i++) {
+            Pokemon pokemon = pokemons.get(i);
+            // Simuler la taille du pokedex après chaque ajout
+            when(pokedex.size()).thenReturn(i + 1);
 
-        // Simuler l'ajout de Pokémon
-        when(pokedex.size()).thenReturn(1).thenReturn(2); // Simule l'augmentation de la taille
-
-        // Ajouter un Pokémon et vérifier la taille
-        pokedex.addPokemon(pokemon1);
-        assertEquals(1, pokedex.size());
-
-        // Ajouter un autre Pokémon et vérifier la taille
-        pokedex.addPokemon(pokemon2);
-        assertEquals(2, pokedex.size());
+            // Ajouter le Pokémon et vérifier la taille
+            pokedex.addPokemon(pokemon);
+            assertEquals(i + 1, pokedex.size());
+        }
     }
-
     @Test
     public void testAddPokemon() {
         for (Pokemon pokemon : pokemons) {
@@ -79,42 +75,60 @@ public class IPokedexTest{
     @Test
     public void testGetPokemons() {
 
-//        when(pokedex.getPokemons()).thenReturn(List.of(pokemon1));
-//        List<Pokemon> pokemons = pokedex.getPokemons();
-//
-//        //Vérification de la taille
-//        assertEquals(1, pokemons.size());
-//
-//        //Vérification de la présence du pokemon
-//        assertEquals(pokemon1, pokemons.get(0));
+        List<Pokemon> exceptedPokemons = new ArrayList<>();
 
-        //TODO généraliser
-        when(pokedex.getPokemons()).thenReturn(pokemons);
-        List<Pokemon> pokemonsList = pokedex.getPokemons();
+        when(pokedex.getPokemons()).thenReturn(exceptedPokemons);
 
-        //Vérification de la taille
-        assertEquals(151, pokemons.size());
+        //Ajout des 10 premiers pokemons
+        for(int i = 0; i<10; i++){
+            Pokemon pokemon = pokemons.get(i);
+            pokedex.addPokemon(pokemon);
+            exceptedPokemons.add(pokemon);
+        }
+        assertEquals(pokedex.getPokemons(), exceptedPokemons);
+        assertEquals(pokedex.getPokemons().size(), exceptedPokemons.size());
 
-        //Vérification de la présence du pokemon
-        assertEquals(pokemonsList.get(0), pokemons.get(0));
+        //Ajout des 50 suivants
+        for(int i = 10; i<50; i++){
+            Pokemon pokemon = pokemons.get(i);
+            pokedex.addPokemon(pokemon);
+            exceptedPokemons.add(pokemon);
+        }
+        assertEquals(pokedex.getPokemons(), exceptedPokemons);
+        assertEquals(pokedex.getPokemons().size(), exceptedPokemons.size());
     }
-
     @Test
     public void testGetPokemonsWithOrder() {
-        Pokemon bulbizarre = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
-        Pokemon aquali = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 100);
-        List<Pokemon> sortedPokemons = new ArrayList<>();
-        sortedPokemons.add(bulbizarre);
-        sortedPokemons.add(aquali);
-        // Mock du comportement du Pokedex pour renvoyer la liste non triée
+        //TODO Test ordre par les index
+        List<Pokemon> sortedPokemons = new ArrayList<>(pokemons); //pokemons est déjà trié selon les indices des pokemons
+        // Mock du comportement du Pokedex pour renvoyer la liste triée
         when(pokedex.getPokemons(any(Comparator.class))).thenReturn(sortedPokemons);
 
-        // Tri des Pokémon en fonction de l'index dans le pokedex
-        List<Pokemon> pokemons = pokedex.getPokemons(Comparator.comparing(Pokemon::getIndex));
+        // Appel à getPokemons avec un comparateur qui trie par ordre alphabétique
+        List<Pokemon> pokemonsFromPokedex = pokedex.getPokemons(Comparator.comparing(Pokemon::getIndex));
 
-        // Vérifications
-        assertEquals(2, pokemons.size());
-        assertEquals(bulbizarre, pokemons.get(0));
-        assertEquals(aquali, pokemons.get(1));
+        // Vérifications de la taille
+        assertEquals(sortedPokemons.size(), pokemonsFromPokedex.size());
+        // Vérification de chaque Pokémon dans l'ordre alphabétique
+        for (int i = 0; i < sortedPokemons.size(); i++) {
+            assertEquals(sortedPokemons.get(i), pokemonsFromPokedex.get(i));
+        }
+
+
+        // TODO Test ordre alphabétique
+        sortedPokemons.sort(Comparator.comparing(Pokemon::getName));
+
+        // Mock du comportement du Pokedex pour renvoyer la liste triée
+        when(pokedex.getPokemons(any(Comparator.class))).thenReturn(sortedPokemons);
+
+        // Appel à getPokemons avec un comparateur qui trie par ordre alphabétique
+        pokemonsFromPokedex = pokedex.getPokemons(Comparator.comparing(Pokemon::getName));
+
+        // Vérifications de la taille
+        assertEquals(sortedPokemons.size(), pokemonsFromPokedex.size());
+        // Vérification de chaque Pokémon dans l'ordre alphabétique
+        for (int i = 0; i < sortedPokemons.size(); i++) {
+            assertEquals(sortedPokemons.get(i), pokemonsFromPokedex.get(i));
+        }
     }
 }
