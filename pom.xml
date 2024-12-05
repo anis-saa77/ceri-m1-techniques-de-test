@@ -98,14 +98,6 @@
                         </goals>
                         <phase>test</phase>
                     </execution>
-                    <!-- Générer un rapport en format XML -->
-                    <execution>
-                        <id>report-aggregate</id>
-                        <goals>
-                            <goal>report-aggregate</goal>
-                        </goals>
-                        <phase>post-integration-test</phase>
-                    </execution>
                 </executions>
             </plugin>
         </plugins>
