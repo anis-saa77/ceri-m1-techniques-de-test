@@ -74,7 +74,7 @@ public class IPokedexTest{
 
     @Test
     public void testGetPokemons() {
-
+        //TODO VERFIER TOUTE CETTE MERDE !!!!!!!!!
         List<Pokemon> exceptedPokemons = new ArrayList<>();
 
         when(pokedex.getPokemons()).thenReturn(exceptedPokemons);
@@ -102,7 +102,7 @@ public class IPokedexTest{
         //TODO Test ordre par les index
         List<Pokemon> sortedPokemons = new ArrayList<>(pokemons); //pokemons est déjà trié selon les indices des pokemons
         // Mock du comportement du Pokedex pour renvoyer la liste triée
-        when(pokedex.getPokemons(any(Comparator.class))).thenReturn(sortedPokemons);
+        when(pokedex.getPokemons(any(Comparator.class))).thenReturn(sortedPokemons);    
 
         // Appel à getPokemons avec un comparateur qui trie par ordre alphabétique
         List<Pokemon> pokemonsFromPokedex = pokedex.getPokemons(Comparator.comparing(Pokemon::getIndex));
@@ -113,7 +113,6 @@ public class IPokedexTest{
         for (int i = 0; i < sortedPokemons.size(); i++) {
             assertEquals(sortedPokemons.get(i), pokemonsFromPokedex.get(i));
         }
-
 
         // TODO Test ordre alphabétique
         sortedPokemons.sort(Comparator.comparing(Pokemon::getName));

@@ -27,7 +27,6 @@ class IPokedexFactoryTest {
 
         // Vérification que le pokedex n'est pas null
         assertNotNull(pokedex);
-
         // Vérification que le pokedex a bien été créé avec les dépendances fournies
         assertTrue(pokedex instanceof IPokedex);
     }
