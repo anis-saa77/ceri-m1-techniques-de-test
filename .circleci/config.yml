@@ -17,6 +17,11 @@ jobs:
       - run:
           name: Test
           command: mvn test  # Exécuter les tests
+      - run:
+          name: Jacoco file generation
+          command: mvn jacoco:report
+      - codecov/upload: # Utilisation de l'orb Codecov pour télécharger les résultats de couverture
+          file: target/site/jacoco/jacoco.xml
 
   # Job pour envoyer les résultats de couverture à Codecov
 
@@ -25,12 +30,6 @@ jobs:
       - image: cimg/openjdk:17.0  # Même image Docker utilisée ici
     steps:
       - checkout  # Récupérer le code pour s'assurer que tous les fichiers sont disponibles
-      - run:
-          name: Jacoco file generation
-          command: mvn jacoco:report
-
-      - codecov/upload:  # Utilisation de l'orb Codecov pour télécharger les résultats de couverture
-          file: target/site/jacoco/jacoco.xml
 
 # Workflow pour orchestrer les jobs
 workflows:
