@@ -2,7 +2,7 @@ version: 2.1
 
 # Définir les orbs
 orbs:
-  codecov: codecov/codecov@5
+  codecov: codecov/codecov@4.0.1
 
 # Définir un job pour compiler et tester l'application
 jobs:
