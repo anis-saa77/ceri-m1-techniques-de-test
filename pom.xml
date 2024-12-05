@@ -77,6 +77,29 @@
                 <version>2.22.2</version>
             </plugin>
 
+            <!-- Plugin pour Jacoco -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.8</version> <!-- Utilisez la version la plus récente de JaCoCo -->
+                <executions>
+                    <!-- Générer le rapport de couverture après l'exécution des tests -->
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <goals>
+                            <goal>report</goal>  <!-- Générez le rapport après les tests -->
+                        </goals>
+                        <phase>post-integration-test</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 
