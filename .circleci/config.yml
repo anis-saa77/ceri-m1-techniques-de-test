@@ -25,7 +25,7 @@ jobs:
     steps:
       - checkout  # Récupérer le code pour s'assurer que tous les fichiers sont disponibles
       - codecov/upload:  # Utilisation de l'orb Codecov pour télécharger les résultats de couverture
-          token: $CODECOV_TOKEN  # Utilisation de la variable d'environnement pour le token Codecov
+          token: CODECOV_TOKEN  # Passer la variable d'environnement sans guillemets
 
 # Workflow pour orchestrer les jobs
 workflows:
