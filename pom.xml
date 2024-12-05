@@ -95,7 +95,7 @@
                         <goals>
                             <goal>report</goal>  <!-- Générez le rapport après les tests -->
                         </goals>
-                        <phase>post-integration-test</phase>
+                        <phase>test</phase>
                     </execution>
                 </executions>
             </plugin>
