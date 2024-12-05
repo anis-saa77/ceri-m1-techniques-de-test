@@ -1,45 +1,38 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine.
-# See: https://circleci.com/docs/configuration-reference
 version: 2.1
+
+# Définir les orbs
 orbs:
-  codecov: codecov/codecov@3
+  codecov: codecov/codecov@5
 
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/jobs-steps/#jobs-overview & https://circleci.com/docs/configuration-reference/#jobs
+# Définir un job pour compiler et tester l'application
 jobs:
-  # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
   build-and-test:
-    # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/executor-intro/ & https://circleci.com/docs/configuration-reference/#executor-job
     docker:
-      # Specify the version you desire here
-      # See: https://circleci.com/developer/images/image/cimg/openjdk
-      - image: cimg/openjdk:17.0
-
-    # Add steps to the job
-    # See: https://circleci.com/docs/jobs-steps/#steps-overview & https://circleci.com/docs/configuration-reference/#steps
+      - image: cimg/openjdk:17.0  # Utilisation d'une image Docker CircleCI OpenJDK
     steps:
-      # Checkout the code as the first step.
-      - checkout
-
-      # Use mvn clean and package as the standard maven build phase
+      - checkout  # Récupérer le code
       - run:
           name: Build
-          command: mvn -B -DskipTests clean package
-      # Then run your tests!
+          command: mvn -B -DskipTests clean package  # Nettoyer et construire sans exécuter les tests
       - run:
           name: Test
-          command: mvn test
+          command: mvn test  # Exécuter les tests
 
-# Orchestrate jobs using workflows
-# See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
-
-workflows:
-  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
-    # Inside the workflow, you define the jobs you want to run.
-    jobs:
-      - build-and-test
+  # Job pour envoyer les résultats de couverture à Codecov
   upload-to-codecov:
+    docker:
+      - image: cimg/openjdk:17.0  # Même image Docker utilisée ici
+    steps:
+      - checkout  # Récupérer le code pour s'assurer que tous les fichiers sont disponibles
+      - codecov/upload:  # Utilisation de l'orb Codecov pour télécharger les résultats de couverture
+          token: $CODECOV_TOKEN  # Utilisation de la variable d'environnement pour le token Codecov
+
+# Workflow pour orchestrer les jobs
+workflows:
+  version: 2
+  build-and-upload:
     jobs:
-      - checkout
-      - codecov/upload
+      - build-and-test  # Exécuter d'abord le job de construction et tests
+      - upload-to-codecov:  # Ensuite, envoyer les résultats à Codecov
+          requires:
+            - build-and-test  # Le job upload dépend du job build-and-test
