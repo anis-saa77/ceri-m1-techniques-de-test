@@ -1,37 +1,18 @@
 # UCE Génie Logiciel Avancé : Techniques de tests
 
-## Introduction
+**Nom et prénom** : Saa Anis  
+**Groupe** : Groupe IA Classique
 
-Vous allez à travers ces projet mettre en application une partie des aspects évoqués en cours vis à vis des techniques de tests.  
-Pour cela nous allons réaliser un projet logiciel de petite taille, en suivant la roadmap suivante : 
-- Setup du projet
-- Mise en place des outils d’intégration continue
-- Écriture des tests unitaires
-- Écriture des mocks, et validation des tests
-- Développement dirigé par les tests
-- Documentation et conventions de style
-- Test d'une implémentation donnée
+## Badges
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/anis-saa77/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/anis-saa77/ceri-m1-techniques-de-test/tree/master)
+[![codecov](https://codecov.io/gh/anis-saa77/ceri-m1-techniques-de-test/graph/badge.svg?token=6THCFKTI18)](https://codecov.io/gh/anis-saa77/ceri-m1-techniques-de-test)
+## Description du projet
 
-Durant cette série de TPs, le gestionnaire de version Git sera utilisé à foison, à travers la plateforme GitHub. Si vous n’êtes pas à l’aise avec cet outil[^1], [voici](http://rogerdudler.github.io/git-guide/) un petit guide à garder sous la main.
+Description du projet...
 
-## Sujets
+### Choix techniques
 
-L'ensemble des sujets de TPs peut être trouvé dans le dossier `TPs`.
-
-Le dossier `src` contient la définition de l'ensemble des interfaces qui seront l'objet de vos travaux.
-
-## Rendus
-
-Le rendu des TPs se fait au rythme suivant :
-
-- TP1 : 2ème séance
-- TP2 : 2ème séance
-- TP3 : 3ème séance
-- TP4 : 5ème séance
-- TP5 : dernière séance
-- TP6 : dernière séance
-
-Pour chaque rendu vous devez créer un tag à partir du commit qui correspond à la complétion du TP.  
-Si vous ne spécifiez pas de tag, le dernier commit à la date-heure de la fin de séance sera celui considéré.
-
-[^1]: Si vous n’êtes vraiment pas à l’aise avec cet outil nous vous conseillons quand même vivement de vous y mettre.
+- **CircleCI** : Nous avons choisi **CircleCI** pour automatiser l'intégration continue et l'exécution des tests. Il s'intègre facilement avec GitHub et permet une gestion simple des pipelines.
+- **Codecov** : Pour le suivi de la couverture de tests, nous avons utilisé **Codecov**, un service populaire qui offre des badges pour afficher la couverture du code et une analyse détaillée des tests.
+- **JaCoCo** : Pour générer les rapports de couverture de tests, nous avons intégré le plugin **JaCoCo** dans notre configuration Maven.
+- **Maven** : Utilisation de **Maven** pour la gestion des dépendances et la construction du projet Java.
