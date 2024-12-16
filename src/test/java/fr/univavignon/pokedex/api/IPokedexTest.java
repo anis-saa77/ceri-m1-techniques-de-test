@@ -4,7 +4,6 @@ import org.junit.*;
 import org.mockito.Mockito;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
@@ -102,7 +101,7 @@ public class IPokedexTest{
         //TODO Test ordre par les index
         List<Pokemon> sortedPokemons = new ArrayList<>(pokemons); //pokemons est déjà trié selon les indices des pokemons
         // Mock du comportement du Pokedex pour renvoyer la liste triée
-        when(pokedex.getPokemons(any(Comparator.class))).thenReturn(sortedPokemons);    
+        when(pokedex.getPokemons(any(Comparator.class))).thenReturn(sortedPokemons);
 
         // Appel à getPokemons avec un comparateur qui trie par ordre alphabétique
         List<Pokemon> pokemonsFromPokedex = pokedex.getPokemons(Comparator.comparing(Pokemon::getIndex));

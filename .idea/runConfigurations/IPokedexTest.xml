@@ -1,0 +1,19 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="IPokedexTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+    <module name="mon-projet" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="fr.univavignon.pokedex.api.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="ALTERNATIVE_JRE_PATH" value="18" />
+    <option name="PACKAGE_NAME" value="fr.univavignon.pokedex.api" />
+    <option name="MAIN_CLASS_NAME" value="fr.univavignon.pokedex.api.IPokedexTest" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="class" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

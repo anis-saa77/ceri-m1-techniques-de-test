@@ -23,13 +23,7 @@ jobs:
       - codecov/upload: # Utilisation de l'orb Codecov pour télécharger les résultats de couverture
           file: target/site/jacoco/jacoco.xml
 
-  # Job pour envoyer les résultats de couverture à Codecov
-
-  upload-to-codecov:
-    docker:
-      - image: cimg/openjdk:17.0  # Même image Docker utilisée ici
-    steps:
-      - checkout  # Récupérer le code pour s'assurer que tous les fichiers sont disponibles
+ # Récupérer le code pour s'assurer que tous les fichiers sont disponibles
 
 # Workflow pour orchestrer les jobs
 workflows:
@@ -37,6 +31,3 @@ workflows:
   build-and-upload:
     jobs:
       - build-and-test  # Exécuter d'abord le job de construction et tests
-      - upload-to-codecov:  # Ensuite, envoyer les résultats à Codecov
-          requires:
-            - build-and-test  # Le job upload dépend du job build-and-test
