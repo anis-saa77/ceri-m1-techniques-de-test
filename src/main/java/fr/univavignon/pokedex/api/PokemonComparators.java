@@ -35,7 +35,6 @@ public enum PokemonComparators implements Comparator<Pokemon> {
 	/** {@inheritDoc} **/
 	@Override
 	public int compare(final Pokemon first, final Pokemon second) {
-		
 		return delegate.compare(first, second);
 	}
 

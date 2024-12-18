@@ -1,34 +1,25 @@
 package fr.univavignon.pokedex.api;
 
 import org.junit.*;
-import org.mockito.Mockito;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
-
-public class IPokedexTest{
-    private IPokedex pokedex;
+public class PokedexTest{
+    private Pokedex pokedex = new Pokedex();
     private PokemonLoader pokemonLoader = new PokemonLoader();
     private List<Pokemon> pokemons ;
     @Before
     public void setUp() {
-        pokedex = Mockito.mock(IPokedex.class);
         pokemons = pokemonLoader.loadPokemons("pokedexfile");
     }
 
     @Test
     public void testSize() {
-        when(pokedex.size()).thenReturn(0);
         assertEquals(0, pokedex.size());
         for (int i = 0; i < pokemons.size(); i++) {
             Pokemon pokemon = pokemons.get(i);
-            // Simuler la taille du pokedex après chaque ajout
-            when(pokedex.size()).thenReturn(i + 1);
-
             // Ajouter le Pokémon et vérifier la taille
             pokedex.addPokemon(pokemon);
             assertEquals(i + 1, pokedex.size());
@@ -37,7 +28,6 @@ public class IPokedexTest{
     @Test
     public void testAddPokemon() {
         for (Pokemon pokemon : pokemons) {
-            when(pokedex.addPokemon(pokemon)).thenReturn(pokemon.getIndex());
             assertEquals(pokemon.getIndex(), pokedex.addPokemon(pokemon));
         }
     }
@@ -45,16 +35,14 @@ public class IPokedexTest{
     public void testGetPokemon() throws PokedexException {
         for (Pokemon pokemon : pokemons) {
             int index = pokemon.getIndex();
-            when(pokedex.getPokemon(index)).thenReturn(pokemon);
+            pokedex.addPokemon(pokemon);
             assertEquals(pokedex.getPokemon(index), pokemon);
         }
     }
     @Test
     public void testGetPokemonWithInvalidIndex() throws PokedexException {
-        int invalidIndex1 = -1;
+        int invalidIndex1 = 0;
         int invalidIndex2 = 152;
-        when(pokedex.getPokemon(invalidIndex1)).thenThrow(new PokedexException("Invalid index"));
-        when(pokedex.getPokemon(invalidIndex2)).thenThrow(new PokedexException("Invalid index"));
 
         //Vérification de la correspondance avec le pokemon voulu
         try {
@@ -74,8 +62,6 @@ public class IPokedexTest{
     @Test
     public void testGetPokemons() {
         List<Pokemon> exceptedPokemons = new ArrayList<>();
-
-        when(pokedex.getPokemons()).thenReturn(exceptedPokemons);
 
         //Ajout des 10 premiers pokemons
         for(int i = 0; i<10; i++){
@@ -99,9 +85,11 @@ public class IPokedexTest{
     public void testGetPokemonsWithOrder() {
         /** Test ordre par les index **/
         List<Pokemon> sortedPokemons = new ArrayList<>(pokemons); //pokemons est déjà trié selon les indices des pokemons
-        // Mock du comportement du Pokedex pour renvoyer la liste triée
-        when(pokedex.getPokemons(any(Comparator.class))).thenReturn(sortedPokemons);
 
+        //Remplir le pokedex
+        for(Pokemon pokemon : pokemons){
+            pokedex.addPokemon(pokemon);
+        }
         // Appel à getPokemons avec un comparateur qui trie par ordre alphabétique
         List<Pokemon> pokemonsFromPokedex = pokedex.getPokemons(PokemonComparators.INDEX);
 
@@ -112,11 +100,8 @@ public class IPokedexTest{
             assertEquals(sortedPokemons.get(i), pokemonsFromPokedex.get(i));
         }
 
-        /** TODO Test ordre alphabétique **/
-        sortedPokemons.sort(PokemonComparators.NAME);
-
-        // Mock du comportement du Pokedex pour renvoyer la liste triée
-        when(pokedex.getPokemons(any(Comparator.class))).thenReturn(sortedPokemons);
+        /** Test ordre alphabétique **/
+        sortedPokemons.sort(Comparator.comparing(Pokemon::getName));
 
         // Appel à getPokemons avec un comparateur qui trie par ordre alphabétique
         pokemonsFromPokedex = pokedex.getPokemons(PokemonComparators.NAME);

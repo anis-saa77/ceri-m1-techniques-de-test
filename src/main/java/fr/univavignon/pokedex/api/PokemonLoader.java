@@ -39,5 +39,32 @@ public class PokemonLoader {
 
         return pokemons;
     }
+
+    public List<PokemonMetadata> loadPokemonsMetadata(String filename) {
+        List<PokemonMetadata> pokemons = new ArrayList<>();
+
+
+        try (BufferedReader reader = new BufferedReader(
+                new InputStreamReader(getClass().getClassLoader().getResourceAsStream(filename)))) {
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(", ");
+                if (parts.length == 10) {
+                    int index = Integer.parseInt(parts[0]);
+                    String name = parts[1].replace("\"", "");
+                    int attack = Integer.parseInt(parts[2]);
+                    int defense = Integer.parseInt(parts[3]);
+                    int stamina = Integer.parseInt(parts[4]);
+
+                    pokemons.add(new PokemonMetadata(index, name, attack, defense, stamina));
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return pokemons;
+    }
 }
 
