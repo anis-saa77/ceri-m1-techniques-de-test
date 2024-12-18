@@ -7,9 +7,14 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 public class PokedexTest{
-    private Pokedex pokedex = new Pokedex();
+
+    private PokemonMetadataProvider pokemonMetadataProvider = new PokemonMetadataProvider();
+    private PokemonFactory pokemonFactory = new PokemonFactory();
+
+;   private Pokedex pokedex = new Pokedex(pokemonMetadataProvider, pokemonFactory);
     private PokemonLoader pokemonLoader = new PokemonLoader();
     private List<Pokemon> pokemons ;
+
     @Before
     public void setUp() {
         pokemons = pokemonLoader.loadPokemons("pokedexfile");

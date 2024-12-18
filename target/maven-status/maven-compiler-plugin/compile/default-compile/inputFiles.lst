@@ -1,5 +1,6 @@
 C:\Users\anisa\Documents\TP-M1\TP_TEST\src\main\java\fr\univavignon\pokedex\api\IPokedex.java
 C:\Users\anisa\Documents\TP-M1\TP_TEST\src\main\java\fr\univavignon\pokedex\api\IPokemonMetadataProvider.java
+C:\Users\anisa\Documents\TP-M1\TP_TEST\src\main\java\fr\univavignon\pokedex\api\PokemonFactory.java
 C:\Users\anisa\Documents\TP-M1\TP_TEST\src\main\java\fr\univavignon\pokedex\api\PokemonLoader.java
 C:\Users\anisa\Documents\TP-M1\TP_TEST\src\main\java\fr\univavignon\pokedex\api\IPokemonTrainerFactory.java
 C:\Users\anisa\Documents\TP-M1\TP_TEST\src\main\java\fr\univavignon\pokedex\api\PokemonTrainer.java
@@ -12,3 +13,4 @@ C:\Users\anisa\Documents\TP-M1\TP_TEST\src\main\java\fr\univavignon\pokedex\api\
 C:\Users\anisa\Documents\TP-M1\TP_TEST\src\main\java\fr\univavignon\pokedex\api\IPokedexFactory.java
 C:\Users\anisa\Documents\TP-M1\TP_TEST\src\main\java\fr\univavignon\pokedex\api\PokedexException.java
 C:\Users\anisa\Documents\TP-M1\TP_TEST\src\main\java\fr\univavignon\pokedex\api\PokemonMetadata.java
+C:\Users\anisa\Documents\TP-M1\TP_TEST\src\main\java\fr\univavignon\pokedex\api\PokedexFactory.java

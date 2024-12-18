@@ -4,59 +4,50 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-<span class="fc" id="L7">public class Pokedex implements IPokedex{</span>
-<span class="fc" id="L8">    private List&lt;Pokemon&gt; pokemons = new ArrayList&lt;&gt;();</span>
+public class Pokedex implements IPokedex{
+<span class="fc" id="L8">    private final List&lt;Pokemon&gt; pokemons = new ArrayList&lt;&gt;();</span>
+    private final PokemonMetadataProvider pokemonMetadataProvider;
+    private final PokemonFactory pokemonFactory;
 
+<span class="fc" id="L12">    public Pokedex(PokemonMetadataProvider pokemonMetadataProvider, PokemonFactory pokemonFactory){</span>
+<span class="fc" id="L13">        this.pokemonMetadataProvider = pokemonMetadataProvider;</span>
+<span class="fc" id="L14">        this.pokemonFactory = pokemonFactory;</span>
+<span class="fc" id="L15">    }</span>
     @Override
     public int size() {
-<span class="fc" id="L12">        return this.pokemons.size();</span>
+<span class="fc" id="L18">        return this.pokemons.size();</span>
     }
 
     @Override
     public int addPokemon(Pokemon pokemon) {
-<span class="fc" id="L17">        this.pokemons.add(pokemon);</span>
-<span class="fc" id="L18">        return pokemon.getIndex();</span>
+<span class="fc" id="L23">        this.pokemons.add(pokemon);</span>
+<span class="fc" id="L24">        return pokemon.getIndex();</span>
     }
     @Override
     public Pokemon getPokemon(int id) throws PokedexException {
-<span class="fc bfc" id="L22" title="All 4 branches covered.">        if(id &lt;= 0 || id &gt; 151) {</span>
-<span class="fc" id="L23">            throw new PokedexException(&quot;Invalid index&quot;);</span>
+<span class="fc bfc" id="L28" title="All 4 branches covered.">        if(id &lt;= 0 || id &gt; 151) {</span>
+<span class="fc" id="L29">            throw new PokedexException(&quot;Invalid index&quot;);</span>
         }
-<span class="fc" id="L25">        return this.pokemons.get(id-1);</span>
+<span class="fc" id="L31">        return this.pokemons.get(id-1);</span>
     }
     @Override
     public List&lt;Pokemon&gt; getPokemons() {
-<span class="fc" id="L29">        return this.pokemons;</span>
+<span class="fc" id="L35">        return this.pokemons;</span>
     }
     @Override
     public List&lt;Pokemon&gt; getPokemons(Comparator&lt;Pokemon&gt; order) {
-<span class="fc" id="L33">        List&lt;Pokemon&gt; sortedList = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L34">        sortedList.addAll(this.pokemons);</span>
-<span class="fc" id="L35">        sortedList.sort(order);</span>
-<span class="fc" id="L36">        return sortedList;</span>
+<span class="fc" id="L39">        List&lt;Pokemon&gt; sortedList = new ArrayList&lt;&gt;(this.pokemons);</span>
+<span class="fc" id="L40">        sortedList.sort(order);</span>
+<span class="fc" id="L41">        return sortedList;</span>
     }
-
     @Override
     public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) {
-<span class="nc" id="L41">        PokemonMetadataProvider metadataProvider = new PokemonMetadataProvider();</span>
-<span class="nc" id="L42">        PokemonMetadata metadata = null;</span>
-        try {
-<span class="nc" id="L44">            metadata = metadataProvider.getPokemonMetadata(index);</span>
-<span class="nc" id="L45">        } catch (PokedexException e) {</span>
-<span class="nc" id="L46">            throw new RuntimeException(e);</span>
-<span class="nc" id="L47">        }</span>
-<span class="nc" id="L48">        String name = metadata.getName();</span>
-<span class="nc" id="L49">        int attack = metadata.getAttack();</span>
-<span class="nc" id="L50">        int defense = metadata.getDefense();</span>
-<span class="nc" id="L51">        int stamina = metadata.getStamina();</span>
-<span class="nc" id="L52">        int iv = 0;</span>
-<span class="nc" id="L53">        return new Pokemon(index, name, attack, defense, stamina, cp, hp, dust, candy, iv);</span>
+<span class="nc" id="L45">        return this.pokemonFactory.createPokemon(index, cp, hp, dust, candy);</span>
     }
 
     @Override
     public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
-<span class="nc" id="L58">        Pokemon pokemon = this.getPokemon(index);</span>
-<span class="nc" id="L59">        return new PokemonMetadata(pokemon.getIndex(), pokemon.getName(), pokemon.getAttack(), pokemon.getDefense(), pokemon.getStamina());</span>
+<span class="nc" id="L50">        return this.pokemonMetadataProvider.getPokemonMetadata(index);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

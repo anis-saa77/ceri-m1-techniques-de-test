@@ -1,15 +1,18 @@
 package fr.univavignon.pokedex.api;
 
-import javax.annotation.processing.Generated;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 public class Pokedex implements IPokedex{
     private final List<Pokemon> pokemons = new ArrayList<>();
-    private final PokemonMetadataProvider pokemonMetadataProvider = new PokemonMetadataProvider();
-    private final PokemonFactory pokemonFactory = new PokemonFactory();
+    private final PokemonMetadataProvider pokemonMetadataProvider;
+    private final PokemonFactory pokemonFactory;
 
+    public Pokedex(PokemonMetadataProvider pokemonMetadataProvider, PokemonFactory pokemonFactory){
+        this.pokemonMetadataProvider = pokemonMetadataProvider;
+        this.pokemonFactory = pokemonFactory;
+    }
     @Override
     public int size() {
         return this.pokemons.size();
