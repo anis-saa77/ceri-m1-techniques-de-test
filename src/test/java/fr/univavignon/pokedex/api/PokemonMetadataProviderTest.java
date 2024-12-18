@@ -2,24 +2,17 @@ package fr.univavignon.pokedex.api;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.ArrayList;
 import java.util.List;
-
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class PokemonMetadataProviderTest {
-    private PokemonMetadataProvider metadataProvider = new PokemonMetadataProvider();
-    private PokemonLoader pokemonLoader = new PokemonLoader();
+    private final PokemonMetadataProvider metadataProvider = new PokemonMetadataProvider();
+    private final PokemonLoader pokemonLoader = new PokemonLoader();
     private List<PokemonMetadata> pokemonsMetadata;
-
     @Before
     public void setUp() {
         pokemonsMetadata = pokemonLoader.loadPokemonsMetadata("pokedexfile");
     }
-
     @Test
     public void testGetPokemonMetadata() throws PokedexException {
         int index = 1;
@@ -38,7 +31,6 @@ public class PokemonMetadataProviderTest {
             index++ ;
         }
     }
-
     @Test
     public void testGetPokemonMetadataInvalidIndex() throws PokedexException {
         int invalidIndex = -1;

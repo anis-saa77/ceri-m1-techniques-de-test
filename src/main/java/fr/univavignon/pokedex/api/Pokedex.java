@@ -1,11 +1,14 @@
 package fr.univavignon.pokedex.api;
 
+import javax.annotation.processing.Generated;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 public class Pokedex implements IPokedex{
-    private List<Pokemon> pokemons = new ArrayList<>();
+    private final List<Pokemon> pokemons = new ArrayList<>();
+    private final PokemonMetadataProvider pokemonMetadataProvider = new PokemonMetadataProvider();
+    private final PokemonFactory pokemonFactory = new PokemonFactory();
 
     @Override
     public int size() {
@@ -30,32 +33,17 @@ public class Pokedex implements IPokedex{
     }
     @Override
     public List<Pokemon> getPokemons(Comparator<Pokemon> order) {
-        List<Pokemon> sortedList = new ArrayList<>();
-        sortedList.addAll(this.pokemons);
+        List<Pokemon> sortedList = new ArrayList<>(this.pokemons);
         sortedList.sort(order);
         return sortedList;
     }
-
     @Override
     public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) {
-        PokemonMetadataProvider metadataProvider = new PokemonMetadataProvider();
-        PokemonMetadata metadata = null;
-        try {
-            metadata = metadataProvider.getPokemonMetadata(index);
-        } catch (PokedexException e) {
-            throw new RuntimeException(e);
-        }
-        String name = metadata.getName();
-        int attack = metadata.getAttack();
-        int defense = metadata.getDefense();
-        int stamina = metadata.getStamina();
-        int iv = 0;
-        return new Pokemon(index, name, attack, defense, stamina, cp, hp, dust, candy, iv);
+        return this.pokemonFactory.createPokemon(index, cp, hp, dust, candy);
     }
 
     @Override
     public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
-        Pokemon pokemon = this.getPokemon(index);
-        return new PokemonMetadata(pokemon.getIndex(), pokemon.getName(), pokemon.getAttack(), pokemon.getDefense(), pokemon.getStamina());
+        return this.pokemonMetadataProvider.getPokemonMetadata(index);
     }
 }
