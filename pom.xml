@@ -65,6 +65,12 @@
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
         <testSourceDirectory>src/test/java</testSourceDirectory>
+        <testResources>
+            <testResource>
+                <!-- Inclure le dossier src/main/resources dans le classpath des tests -->
+                <directory>src/main/resources</directory>
+            </testResource>
+        </testResources>
         <plugins>
             <!-- Plugin pour compiler le projet avec les bonnes versions de Java -->
             <plugin>
