@@ -35,8 +35,7 @@ public class PokemonLoader {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
-            //throw new IOException();
+            //e.printStackTrace();
         }
         return pokemons;
     }
@@ -62,7 +61,7 @@ public class PokemonLoader {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
 
         return pokemons;

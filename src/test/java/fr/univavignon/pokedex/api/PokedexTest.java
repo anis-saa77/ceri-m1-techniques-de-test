@@ -14,10 +14,13 @@ public class PokedexTest{
 ;   private Pokedex pokedex = new Pokedex(pokemonMetadataProvider, pokemonFactory);
     private PokemonLoader pokemonLoader = new PokemonLoader();
     private List<Pokemon> pokemons ;
+    private List<PokemonMetadata> pokemonsMetadata;
 
     @Before
     public void setUp() {
         pokemons = pokemonLoader.loadPokemons("pokedexfile");
+        pokemonsMetadata = pokemonLoader.loadPokemonsMetadata("pokedexfile");
+        pokemonFactory = new PokemonFactory();
     }
 
     @Test
@@ -116,6 +119,70 @@ public class PokedexTest{
         // Vérification de chaque Pokémon dans l'ordre alphabétique
         for (int i = 0; i < sortedPokemons.size(); i++) {
             assertEquals(sortedPokemons.get(i), pokemonsFromPokedex.get(i));
+        }
+    }
+    @Test
+    public void testCreatePokemon() {
+        // Données d'entrée
+        int index = 1;
+        int cp = 500;
+        int hp = 100;
+        int dust = 50;
+        int candy = 10;
+
+        // Création du Pokémon
+        Pokemon pokemon = pokemonFactory.createPokemon(index, cp, hp, dust, candy);
+
+        // Vérifications des propriétés
+        assertNotNull("The created Pokemon should not be null", pokemon);
+        assertEquals("Index should match the input index", index, pokemon.getIndex());
+        assertEquals("CP should match the input CP", cp, pokemon.getCp());
+        assertEquals("HP should match the input HP", hp, pokemon.getHp());
+        assertEquals("Dust should match the input dust", dust, pokemon.getDust());
+        assertEquals("Candy should match the input candy", candy, pokemon.getCandy());
+        assertEquals("IV should initially be zero", 0, pokemon.getIv(), 0);
+
+        // Vérifications des métadonnées via le metadataProvider
+        assertEquals("Name should match metadata", "Bulbizarre", pokemon.getName());
+        assertEquals("Attack should match metadata", 126, pokemon.getAttack());
+        assertEquals("Defense should match metadata", 126, pokemon.getDefense());
+        assertEquals("Stamina should match metadata", 90, pokemon.getStamina());
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void testCreatePokemonWithInvalidIndex() {
+        // Test avec un index invalide
+        int invalidIndex = 999;
+        pokemonFactory.createPokemon(invalidIndex, 500, 100, 50, 10);
+    }
+
+    @Test
+    public void testGetPokemonMetadata() throws PokedexException {
+        int index = 1;
+        for (PokemonMetadata expectedMetadata : pokemonsMetadata) {
+            // Appel de la méthode à tester
+            PokemonMetadata actualMetadata = pokemonMetadataProvider.getPokemonMetadata(index);
+
+            // Vérification des résultats
+            assertNotNull(actualMetadata);
+            assertEquals(expectedMetadata.getIndex(), actualMetadata.getIndex());
+            assertEquals(expectedMetadata.getName(), actualMetadata.getName());
+            assertEquals(expectedMetadata.getAttack(), actualMetadata.getAttack());
+            assertEquals(expectedMetadata.getDefense(), actualMetadata.getDefense());
+            assertEquals(expectedMetadata.getStamina(), actualMetadata.getStamina());
+
+            index++ ;
+        }
+    }
+    @Test
+    public void testGetPokemonMetadataInvalidIndex() throws PokedexException {
+        int invalidIndex = -1;
+        // Vérification que l'exception est bien levée
+        try {
+            pokemonMetadataProvider.getPokemonMetadata(-1);
+            fail("Expected a PokedexException to be thrown");
+        } catch (PokedexException e) {
+            assertEquals("Invalid index", e.getMessage());
         }
     }
 }
