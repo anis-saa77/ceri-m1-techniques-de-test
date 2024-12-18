@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class PokemonLoader {
 
@@ -45,7 +46,7 @@ public class PokemonLoader {
 
 
         try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(getClass().getClassLoader().getResourceAsStream(filename)))) {
+                new InputStreamReader(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(filename))))) {
 
             String line;
             while ((line = reader.readLine()) != null) {

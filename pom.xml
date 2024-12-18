@@ -68,7 +68,7 @@
         <testResources>
             <testResource>
                 <!-- Inclure le dossier src/main/resources dans le classpath des tests -->
-                <directory>src/main/resources</directory>
+                <directory>src/resources</directory>
             </testResource>
         </testResources>
         <plugins>
