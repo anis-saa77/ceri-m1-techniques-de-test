@@ -53,7 +53,7 @@ jobs:
 #          name: Copy Checkstyle Report to Output Directory
 #          command: |
 #            mkdir -p ~/reports/
-#            cp target/checkstyle-result.xml ~/reports/checkstyle-result.xml
+#            cp target/checkstyle.xml ~/reports/checkstyle.xml
 
 #      - store_artifacts:
 #          path: target/site
