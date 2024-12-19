@@ -32,6 +32,10 @@ jobs:
             mkdir -p ~/reports/
             cp target/checkstyle-result.xml ~/reports/checkstyle-result.xml
 
+#      - store_artifacts:
+#          path: target/site
+#          destination: reports
+
  # Récupérer le code pour s'assurer que tous les fichiers sont disponibles
 
 # Workflow pour orchestrer les jobs
