@@ -36,7 +36,7 @@ public class PokemonMetadataProviderTest {
         int invalidIndex = -1;
         // Vérification que l'exception est bien levée
         try {
-            metadataProvider.getPokemonMetadata(-1);
+            metadataProvider.getPokemonMetadata(invalidIndex);
             fail("Expected a PokedexException to be thrown");
         } catch (PokedexException e) {
             assertEquals("Invalid index", e.getMessage());

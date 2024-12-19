@@ -6,6 +6,8 @@
 ## Badges
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/anis-saa77/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/anis-saa77/ceri-m1-techniques-de-test/tree/master)
 [![codecov](https://codecov.io/gh/anis-saa77/ceri-m1-techniques-de-test/graph/badge.svg?token=6THCFKTI18)](https://codecov.io/gh/anis-saa77/ceri-m1-techniques-de-test)
+[![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](lien-vers-le-rapport)
+
 ## Description du projet
 
 Description du projet...

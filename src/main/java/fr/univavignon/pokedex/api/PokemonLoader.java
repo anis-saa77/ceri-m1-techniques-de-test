@@ -19,20 +19,18 @@ public class PokemonLoader {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(", ");
-                if (parts.length == 10) {
-                    int index = Integer.parseInt(parts[0]);
-                    String name = parts[1].replace("\"", "");
-                    int attack = Integer.parseInt(parts[2]);
-                    int defense = Integer.parseInt(parts[3]);
-                    int stamina = Integer.parseInt(parts[4]);
-                    int cp = Integer.parseInt(parts[5]);
-                    int hp = Integer.parseInt(parts[6]);
-                    int dust = Integer.parseInt(parts[7]);
-                    int candy = Integer.parseInt(parts[8]);
-                    int iv = Integer.parseInt(parts[9]);
+                int index = Integer.parseInt(parts[0]);
+                String name = parts[1].replace("\"", "");
+                int attack = Integer.parseInt(parts[2]);
+                int defense = Integer.parseInt(parts[3]);
+                int stamina = Integer.parseInt(parts[4]);
+                int cp = Integer.parseInt(parts[5]);
+                int hp = Integer.parseInt(parts[6]);
+                int dust = Integer.parseInt(parts[7]);
+                int candy = Integer.parseInt(parts[8]);
+                int iv = Integer.parseInt(parts[9]);
 
-                    pokemons.add(new Pokemon(index, name, attack, defense, stamina, cp, hp, dust, candy, iv));
-                }
+                pokemons.add(new Pokemon(index, name, attack, defense, stamina, cp, hp, dust, candy, iv));
             }
         } catch (IOException e) {
             //e.printStackTrace();
@@ -50,15 +48,14 @@ public class PokemonLoader {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(", ");
-                if (parts.length == 10) {
-                    int index = Integer.parseInt(parts[0]);
-                    String name = parts[1].replace("\"", "");
-                    int attack = Integer.parseInt(parts[2]);
-                    int defense = Integer.parseInt(parts[3]);
-                    int stamina = Integer.parseInt(parts[4]);
+                int index = Integer.parseInt(parts[0]);
+                String name = parts[1].replace("\"", "");
+                int attack = Integer.parseInt(parts[2]);
+                int defense = Integer.parseInt(parts[3]);
+                int stamina = Integer.parseInt(parts[4]);
 
-                    pokemons.add(new PokemonMetadata(index, name, attack, defense, stamina));
-                }
+                pokemons.add(new PokemonMetadata(index, name, attack, defense, stamina));
+
             }
         } catch (IOException e) {
             //e.printStackTrace();
