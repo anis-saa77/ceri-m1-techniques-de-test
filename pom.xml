@@ -59,6 +59,19 @@
             <artifactId>commons-collections4</artifactId>
             <version>4.0</version>
         </dependency>
+
+        <!-- Ajouter la dépendance JAXB API -->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <!-- Ajouter la dépendance pour l'implémentation JAXB -->
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>2.3.3</version>
+        </dependency>
     </dependencies>
 
     <!-- Configuration du cycle de vie (build et test) -->
