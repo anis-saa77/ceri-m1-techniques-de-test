@@ -127,7 +127,7 @@
                 <version>3.2.0</version>
                 <configuration>
                     <configLocation>checkstyle.xml</configLocation>
-                    <outputFile>target/checkstyle-result.xml</outputFile> <!-- Rapport XML -->
+                    <outputFile>target/checkstyle/index.html</outputFile> <!-- Rapport HTML -->
                     <outputFileFormat>xml</outputFileFormat>
                     <failsOnError>true</failsOnError>
                 </configuration>

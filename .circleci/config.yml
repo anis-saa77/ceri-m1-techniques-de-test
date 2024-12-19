@@ -36,7 +36,7 @@ jobs:
 
             # Change de répertoire pour la branche gh-pages
             mkdir gh-pages
-            cp target/checkstyle-result.xml gh-pages/
+            cp target/checkstyle/index.html gh-pages/
 
             # Change de répertoire pour la branche gh-pages
             cd gh-pages
@@ -48,16 +48,11 @@ jobs:
             git remote add origin https://$GH_TOKEN@github.com/anis-saa77/ceri-m1-techniques-de-test.git
 
             # Ajouter et valider les modifications
-            git add checkstyle-result.xml
+            git add index.html
             git commit -m "Update Checkstyle Report [skip ci]"
 
             # Pousser les modifications vers la branche gh-pages
             git push --force origin master:gh-pages
-#      - run:
-#          name: Copy Checkstyle Report to Output Directory
-#          command: |
-#            mkdir -p ~/reports/
-#            cp target/checkstyle.xml ~/reports/checkstyle.xml
 
 #      - store_artifacts:
 #          path: target/site
