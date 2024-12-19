@@ -26,11 +26,11 @@ jobs:
       - run:
           name: Run Checkstyle and Generate Report
           command: mvn checkstyle:checkstyle
-      - run:
-          name: Copy Checkstyle Report to Output Directory
-          command: |
-            mkdir -p ~/reports/
-            cp target/checkstyle-result.xml ~/reports/checkstyle-result.xml
+#      - run:
+#          name: Copy Checkstyle Report to Output Directory
+#          command: |
+#            mkdir -p ~/reports/
+#            cp target/checkstyle-result.xml ~/reports/checkstyle-result.xml
 
 #      - store_artifacts:
 #          path: target/site
