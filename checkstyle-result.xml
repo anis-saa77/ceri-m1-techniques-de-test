@@ -5,22 +5,27 @@
 
 <module name="Checker">
 
+    <module name="TreeWalker">
+      <module name="AvoidStarImport"/>
+      <module name="ConstantName"/>
+      <module name="EmptyBlock"/>
+    </module>
   <!-- Vérification des structures de code -->
   <module name="TreeWalker">
     <!-- Règles sur les conventions de style -->
-    <module name="TypeName"/>
-    <module name="MethodName"/>
-    <module name="ParameterName"/>
-    <module name="LocalVariableName"/>
-    <module name="MemberName"/>
+<!--    <module name="TypeName"/>-->
+<!--    <module name="MethodName"/>-->
+<!--    <module name="ParameterName"/>-->
+<!--    <module name="LocalVariableName"/>-->
+<!--    <module name="MemberName"/>-->
 
     <!-- Indentation -->
-    <module name="Indentation">
-      <property name="basicOffset" value="4"/>
-      <property name="braceAdjustment" value="0"/>
-      <property name="caseIndent" value="4"/>
-      <property name="lineWrappingIndentation" value="8"/>
-    </module>
+<!--    <module name="Indentation">-->
+<!--      <property name="basicOffset" value="4"/>-->
+<!--      <property name="braceAdjustment" value="0"/>-->
+<!--      <property name="caseIndent" value="4"/>-->
+<!--      <property name="lineWrappingIndentation" value="8"/>-->
+<!--    </module>-->
 
   </module>
 </module>
