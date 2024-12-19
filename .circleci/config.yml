@@ -34,21 +34,21 @@ jobs:
             git config --global user.email "anisamara777@gmail.com"
             git config --global user.name "anis-saa77"
             
-            # Clone la branche gh-pages
-            git clone --branch gh-pages https://github.com/anis-saa77/ceri-m1-techniques-de-test.git gh-pages
-            
-            # Copie du fichier Checkstyle généré dans le répertoire gh-pages
+             # Change de répertoire pour la branche gh-pages
+            mkdir gh-pages
             cp target/checkstyle-result.xml gh-pages/
             
             # Change de répertoire pour la branche gh-pages
             cd gh-pages
-            
-            # Ajoute et valide les modifications
-            git add checkstyle-result.xml
+
+            # Initialisation d'un nouveau dépôt Git
+            git init
+            git add checkstyle-result.xml 
             git commit -m "Update Checkstyle Report [skip ci]"  # Commit avec le message approprié
             
-            # Pousse les modifications sur la branche gh-pages
-            git push origin gh-pages  # Pousse le rapport sur GitHub Pages
+            # Utilisation du token pour pousser les modifications
+            git remote add origin https://github.com/anis-saa77/ceri-m1-techniques-de-test.git
+            git push --force origin master:gh-pages
 #      - run:
 #          name: Copy Checkstyle Report to Output Directory
 #          command: |
