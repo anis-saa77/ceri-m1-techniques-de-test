@@ -24,15 +24,13 @@ jobs:
           file: target/site/jacoco/jacoco.xml
 
       - run:
-          name : Run Checkstyle and Generate Report
-          command: mvn checkstyle:check
-
+          name: Run Checkstyle and Generate Report
+          command: mvn checkstyle:checkstyle
       - run:
-        name : Upload Checkstyle XML Report
-        uses: actions/upload-artifact@v3
-        with:
-          name: checkstyle-report
-          path: target/checkstyle-result.xml
+          name: Copy Checkstyle Report to Output Directory
+          command: |
+            mkdir -p ~/reports/
+            cp target/checkstyle-result.xml ~/reports/checkstyle-result.xml
 
  # Récupérer le code pour s'assurer que tous les fichiers sont disponibles
 
