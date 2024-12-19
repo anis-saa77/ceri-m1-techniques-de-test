@@ -33,21 +33,25 @@ jobs:
             # Configure les informations de l'utilisateur Git
             git config --global user.email "anisamara777@gmail.com"
             git config --global user.name "anis-saa77"
-            
-             # Change de répertoire pour la branche gh-pages
+
+            # Change de répertoire pour la branche gh-pages
             mkdir gh-pages
             cp target/checkstyle-result.xml gh-pages/
-            
+
             # Change de répertoire pour la branche gh-pages
             cd gh-pages
 
             # Initialisation d'un nouveau dépôt Git
             git init
-            git add checkstyle-result.xml 
-            git commit -m "Update Checkstyle Report [skip ci]"  # Commit avec le message approprié
-            
-            # Utilisation du token pour pousser les modifications
-            git remote set-url origin https://$GH_TOKEN@github.com/anis-saa77/ceri-m1-techniques-de-test.git
+
+            # Ajouter le dépôt distant
+            git remote add origin https://$GH_TOKEN@github.com/anis-saa77/ceri-m1-techniques-de-test.git
+
+            # Ajouter et valider les modifications
+            git add checkstyle-result.xml
+            git commit -m "Update Checkstyle Report [skip ci]"
+
+            # Pousser les modifications vers la branche gh-pages
             git push --force origin master:gh-pages
 #      - run:
 #          name: Copy Checkstyle Report to Output Directory
