@@ -130,6 +130,12 @@
                     <outputFile>target/checkstyle-result.xml</outputFile> <!-- Rapport XML -->
                     <outputFileFormat>xml</outputFileFormat>
                     <failsOnError>true</failsOnError>
+                    <properties>
+                        <property>
+                            <name>checkstyle.enableExternalDtdLoad</name>
+                            <value>true</value>
+                        </property>
+                    </properties>
                 </configuration>
                 <executions>
                     <execution>
@@ -140,6 +146,7 @@
                     </execution>
                 </executions>
             </plugin>
+
 
         </plugins>
     </build>
