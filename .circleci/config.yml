@@ -27,27 +27,27 @@ jobs:
           name: Run Checkstyle and Generate Report
           command: mvn checkstyle:checkstyle
       - run:
-          name: Deploy Checkstyle Report to GitHub Pages
-          command: |
-            # Configure les informations de l'utilisateur Git
-            git config --global user.email "circleci@users.noreply.github.com"
-            git config --global user.name "CircleCI Bot"
-            
-            # Clone la branche gh-pages
-            git clone --branch gh-pages https://github.com/<user>/<repo>.git gh-pages
-            
-            # Copie du fichier Checkstyle généré dans le répertoire gh-pages
-            cp -r target/site/checkstyle.html gh-pages/
-            
-            # Change de répertoire pour la branche gh-pages
-            cd gh-pages
-            
-            # Ajoute et valide les modifications
-            git add checkstyle.html
-            git commit -m "Update Checkstyle Report [skip ci]"  # Commit avec le message approprié
-            
-            # Pousse les modifications sur la branche gh-pages
-            git push origin gh-pages  # Pousse le rapport sur GitHub Pages
+        name: Deploy Checkstyle Report to GitHub Pages
+        command: |
+          # Configure les informations de l'utilisateur Git
+          git config --global user.email "anisamara777@gmail.com"
+          git config --global user.name "anis-saa77"
+          
+          # Clone la branche gh-pages
+          git clone --branch gh-pages https://github.com/anis-saa77/ceri-m1-techniques-de-test.git gh-pages
+          
+          # Copie du fichier Checkstyle généré dans le répertoire gh-pages
+          cp -r checkstyle-result.xml gh-pages/
+          
+          # Change de répertoire pour la branche gh-pages
+          cd gh-pages
+          
+          # Ajoute et valide les modifications
+          git add checkstyle-result.xml
+          git commit -m "Update Checkstyle Report [skip ci]"  # Commit avec le message approprié
+          
+          # Pousse les modifications sur la branche gh-pages
+          git push origin gh-pages  # Pousse le rapport sur GitHub Pages
 #      - run:
 #          name: Copy Checkstyle Report to Output Directory
 #          command: |
