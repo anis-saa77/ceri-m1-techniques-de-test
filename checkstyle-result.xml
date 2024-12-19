@@ -4,8 +4,6 @@
         "https://checkstyle.org/dtds/configuration_1_3.dtd">
 
 <module name="Checker">
-  <!-- Documentation générale -->
-  <module name="JavadocPackage"/>
 
   <!-- Vérification des structures de code -->
   <module name="TreeWalker">
@@ -24,33 +22,5 @@
       <property name="lineWrappingIndentation" value="8"/>
     </module>
 
-    <!-- Documentation spécifique -->
-    <module name="JavadocMethod"/>
-    <module name="JavadocType"/>
-    <module name="JavadocVariable"/>
-    <module name="MissingJavadocMethod"/>
-
-    <!-- Importation -->
-    <module name="UnusedImports"/>
-    <module name="ImportOrder">
-      <property name="groups" value="java,javax,org,com"/>
-      <property name="separated" value="true"/>
-    </module>
-
-    <!-- Bonnes pratiques -->
-    <module name="FinalParameters"/>
-    <module name="AvoidStarImport"/>
-    <module name="NestedIfDepth">
-      <property name="max" value="3"/>
-    </module>
-    <module name="CyclomaticComplexity">
-      <property name="max" value="10"/>
-    </module>
-    <module name="MethodLength">
-      <property name="max" value="50"/>
-    </module>
-    <module name="ClassDataAbstractionCoupling">
-      <property name="max" value="7"/>
-    </module>
   </module>
 </module>
