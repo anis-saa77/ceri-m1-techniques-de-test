@@ -12,15 +12,6 @@ jobs:
     steps:
       - checkout  # Récupérer le code
       - run:
-          name: Run Checkstyle and Generate Report
-          command: mvn checkstyle:checkstyle
-      - run:
-          name: Copy Checkstyle Report to Output Directory
-          command: |
-            mkdir -p ~/reports/
-            cp target/checkstyle-result.xml ~/reports/checkstyle-result.xml
-
-      - run:
           name: Build
           command: mvn -B -DskipTests clean package  # Nettoyer et construire sans exécuter les tests
       - run:
@@ -31,6 +22,15 @@ jobs:
           command: mvn jacoco:report
       - codecov/upload: # Utilisation de l'orb Codecov pour télécharger les résultats de couverture
           file: target/site/jacoco/jacoco.xml
+
+      - run:
+          name: Run Checkstyle and Generate Report
+          command: mvn checkstyle:checkstyle
+      - run:
+          name: Copy Checkstyle Report to Output Directory
+          command: |
+            mkdir -p ~/reports/
+            cp target/checkstyle-result.xml ~/reports/checkstyle-result.xml
 
  # Récupérer le code pour s'assurer que tous les fichiers sont disponibles
 
