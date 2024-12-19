@@ -47,7 +47,7 @@ jobs:
             git commit -m "Update Checkstyle Report [skip ci]"  # Commit avec le message approprié
             
             # Utilisation du token pour pousser les modifications
-            git remote add origin https://$GH_TOKEN@github.com/anis-saa77/ceri-m1-techniques-de-test.git
+            git remote set-url origin https://$GH_TOKEN@github.com/anis-saa77/ceri-m1-techniques-de-test.git
             git push --force origin master:gh-pages
 #      - run:
 #          name: Copy Checkstyle Report to Output Directory
