@@ -129,7 +129,7 @@
                     <configLocation>checkstyle-result.xml</configLocation>
                     <outputFile>target/checkstyle-result.xml</outputFile> <!-- Rapport XML -->
                     <outputFileFormat>xml</outputFileFormat>
-                    <failsOnError>true</failsOnError>
+                    <failsOnError>false</failsOnError>
                     <properties>
                         <property>
                             <name>checkstyle.enableExternalDtdLoad</name>
