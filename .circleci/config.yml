@@ -97,11 +97,15 @@ jobs:
           command: |
             git config --global user.email "anisamara777@gmail.com"
             git config --global user.name "anis-saa77"
-                     
-            git remote add origin https://$GH_TOKEN@github.com/anis-saa77/ceri-m1-techniques-de-test.git
             
+            # Mettre à jour l'URL du remote 'origin' avec l'authentification via GH_TOKEN
+            git remote set-url origin https://$GH_TOKEN@github.com/anis-saa77/ceri-m1-techniques-de-test.git
+      
+            # Ajouter et committer les changements
             git add README.md
             git commit -m "Mise à jour automatique du lien Checkstyle dans README"
+      
+            # Pousser les modifications avec le token d'authentification
             git push origin master
     
 
