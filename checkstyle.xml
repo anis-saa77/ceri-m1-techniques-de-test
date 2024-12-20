@@ -10,11 +10,6 @@
         <module name="ClassTypeParameterName"/>
         <module name="ConstantName"/>
 
-        <!-- Limiter la longueur des lignes de code -->
-        <module name="LineLength">
-            <property name="max" value="120"/>
-        </module>
-
         <!-- Vérifier que les fichiers Java utilisent des blocs correctement -->
         <module name="NeedBraces"/>
 
