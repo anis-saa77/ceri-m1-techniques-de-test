@@ -58,16 +58,16 @@ jobs:
               PIPELINE_ID=$(echo "$RESPONSE" | jq -r '.items[0].id')
               PIPELINE_NUMBER=$(echo "$RESPONSE" | jq -r '.items[0].number')
           
-              # Récupérer l'ID du workflow du pipeline
-              WORKFLOW_ID=$(curl -s -H "Circle-Token: ${CIRCLECI_TOKEN}" \
-                "https://circleci.com/api/v2/pipeline/${PIPELINE_ID}/workflow" | jq -r '.items[0].id')
+              WORKFLOW_RESPONSE=$(curl -s -H "Circle-Token: ${CIRCLECI_TOKEN}" \
+                  "https://circleci.com/api/v2/pipeline/${PIPELINE_ID}/workflow")
           
-              # Récupérer l'ID du job spécifique dans ce workflow (choisis un job spécifique ici)
-              JOB_ID=$(curl -s -H "Circle-Token: ${CIRCLECI_TOKEN}" \
-                "https://circleci.com/api/v2/workflow/${WORKFLOW_ID}/job" | jq -r '.items[0].id')
+              WORKFLOW_ID=$(echo "$WORKFLOW_RESPONSE" | jq -r '.items[0].id')
+          
+              # Récupérer le job number du job spécifique dans ce workflow
+              JOB_NUMBER=$(echo "$WORKFLOW_RESPONSE" | jq -r '.items[0].jobs[0].number')
           
               # Générer l'URL des artefacts du job spécifique
-              ARTIFACTS_URL="https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/${PIPELINE_NUMBER}/workflows/${WORKFLOW_ID}/jobs/${JOB_ID}/artifacts"
+              ARTIFACTS_URL="https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/${PIPELINE_NUMBER}/workflows/${WORKFLOW_ID}/jobs/${JOB_NUMBER}/artifacts"
           
               # Mettre à jour le README.md
               sed -i "s|# Rapport Checkstyle|# Rapport Checkstyle\n\nVoir le rapport Checkstyle des artefacts : $ARTIFACTS_URL|" README.md
