@@ -6,15 +6,15 @@
     public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy){
         PokemonMetadata metadata;
         try {
-<span class="nc" id="L9">            metadata = metadataProvider.getPokemonMetadata(index);</span>
-<span class="nc" id="L10">        } catch (PokedexException e) {</span>
-<span class="nc" id="L11">            throw new RuntimeException(e);</span>
-<span class="nc" id="L12">        }</span>
-<span class="nc" id="L13">        int attack = metadata.getAttack();</span>
-<span class="nc" id="L14">        String name = metadata.getName();</span>
-<span class="nc" id="L15">        int defense = metadata.getDefense();</span>
-<span class="nc" id="L16">        int stamina = metadata.getStamina();</span>
-<span class="nc" id="L17">        return new Pokemon(index, name, attack, defense, stamina, cp, hp, dust, candy, 0);</span>
+<span class="fc" id="L9">            metadata = metadataProvider.getPokemonMetadata(index);</span>
+<span class="fc" id="L10">        } catch (PokedexException e) {</span>
+<span class="fc" id="L11">            throw new RuntimeException(e);</span>
+<span class="fc" id="L12">        }</span>
+<span class="fc" id="L13">        int attack = metadata.getAttack();</span>
+<span class="fc" id="L14">        String name = metadata.getName();</span>
+<span class="fc" id="L15">        int defense = metadata.getDefense();</span>
+<span class="fc" id="L16">        int stamina = metadata.getStamina();</span>
+<span class="fc" id="L17">        return new Pokemon(index, name, attack, defense, stamina, cp, hp, dust, candy, 0);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

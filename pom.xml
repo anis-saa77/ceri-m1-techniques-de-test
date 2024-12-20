@@ -127,13 +127,13 @@
                 <version>3.2.0</version>
                 <configuration>
                     <configLocation>checkstyle.xml</configLocation>
-                    <outputFile>target/checkstyle/index.html</outputFile> <!-- Rapport HTML -->
+                    <outputFile>target/checkstyle/checkstyle-result.xml</outputFile> <!-- Rapport XML -->
                     <outputFileFormat>xml</outputFileFormat>
                     <failsOnError>true</failsOnError>
                 </configuration>
                 <executions>
                     <execution>
-                        <phase>validate</phase>
+                        <phase>test</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>

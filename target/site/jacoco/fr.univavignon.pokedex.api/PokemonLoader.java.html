@@ -19,53 +19,49 @@ import java.util.Objects;
             String line;
 <span class="fc bfc" id="L20" title="All 2 branches covered.">            while ((line = reader.readLine()) != null) {</span>
 <span class="fc" id="L21">                String[] parts = line.split(&quot;, &quot;);</span>
-<span class="pc bpc" id="L22" title="1 of 2 branches missed.">                if (parts.length == 10) {</span>
-<span class="fc" id="L23">                    int index = Integer.parseInt(parts[0]);</span>
-<span class="fc" id="L24">                    String name = parts[1].replace(&quot;\&quot;&quot;, &quot;&quot;);</span>
-<span class="fc" id="L25">                    int attack = Integer.parseInt(parts[2]);</span>
-<span class="fc" id="L26">                    int defense = Integer.parseInt(parts[3]);</span>
-<span class="fc" id="L27">                    int stamina = Integer.parseInt(parts[4]);</span>
-<span class="fc" id="L28">                    int cp = Integer.parseInt(parts[5]);</span>
-<span class="fc" id="L29">                    int hp = Integer.parseInt(parts[6]);</span>
-<span class="fc" id="L30">                    int dust = Integer.parseInt(parts[7]);</span>
-<span class="fc" id="L31">                    int candy = Integer.parseInt(parts[8]);</span>
-<span class="fc" id="L32">                    int iv = Integer.parseInt(parts[9]);</span>
+<span class="fc" id="L22">                int index = Integer.parseInt(parts[0]);</span>
+<span class="fc" id="L23">                String name = parts[1].replace(&quot;\&quot;&quot;, &quot;&quot;);</span>
+<span class="fc" id="L24">                int attack = Integer.parseInt(parts[2]);</span>
+<span class="fc" id="L25">                int defense = Integer.parseInt(parts[3]);</span>
+<span class="fc" id="L26">                int stamina = Integer.parseInt(parts[4]);</span>
+<span class="fc" id="L27">                int cp = Integer.parseInt(parts[5]);</span>
+<span class="fc" id="L28">                int hp = Integer.parseInt(parts[6]);</span>
+<span class="fc" id="L29">                int dust = Integer.parseInt(parts[7]);</span>
+<span class="fc" id="L30">                int candy = Integer.parseInt(parts[8]);</span>
+<span class="fc" id="L31">                int iv = Integer.parseInt(parts[9]);</span>
 
-<span class="fc" id="L34">                    pokemons.add(new Pokemon(index, name, attack, defense, stamina, cp, hp, dust, candy, iv));</span>
-                }
-<span class="fc" id="L36">            }</span>
-<span class="nc" id="L37">        } catch (IOException e) {</span>
-<span class="nc" id="L38">            e.printStackTrace();</span>
-            //throw new IOException();
-<span class="fc" id="L40">        }</span>
-<span class="fc" id="L41">        return pokemons;</span>
+<span class="fc" id="L33">                pokemons.add(new Pokemon(index, name, attack, defense, stamina, cp, hp, dust, candy, iv));</span>
+<span class="fc" id="L34">            }</span>
+<span class="nc" id="L35">        } catch (IOException e) {</span>
+            //e.printStackTrace();
+<span class="fc" id="L37">        }</span>
+<span class="fc" id="L38">        return pokemons;</span>
     }
 
     public List&lt;PokemonMetadata&gt; loadPokemonsMetadata(String filename) {
-<span class="fc" id="L45">        List&lt;PokemonMetadata&gt; pokemons = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L42">        List&lt;PokemonMetadata&gt; pokemons = new ArrayList&lt;&gt;();</span>
 
 
-<span class="fc" id="L48">        try (BufferedReader reader = new BufferedReader(</span>
-<span class="fc" id="L49">                new InputStreamReader(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(filename))))) {</span>
+<span class="fc" id="L45">        try (BufferedReader reader = new BufferedReader(</span>
+<span class="fc" id="L46">                new InputStreamReader(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(filename))))) {</span>
 
             String line;
-<span class="fc bfc" id="L52" title="All 2 branches covered.">            while ((line = reader.readLine()) != null) {</span>
-<span class="fc" id="L53">                String[] parts = line.split(&quot;, &quot;);</span>
-<span class="pc bpc" id="L54" title="1 of 2 branches missed.">                if (parts.length == 10) {</span>
-<span class="fc" id="L55">                    int index = Integer.parseInt(parts[0]);</span>
-<span class="fc" id="L56">                    String name = parts[1].replace(&quot;\&quot;&quot;, &quot;&quot;);</span>
-<span class="fc" id="L57">                    int attack = Integer.parseInt(parts[2]);</span>
-<span class="fc" id="L58">                    int defense = Integer.parseInt(parts[3]);</span>
-<span class="fc" id="L59">                    int stamina = Integer.parseInt(parts[4]);</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">            while ((line = reader.readLine()) != null) {</span>
+<span class="fc" id="L50">                String[] parts = line.split(&quot;, &quot;);</span>
+<span class="fc" id="L51">                int index = Integer.parseInt(parts[0]);</span>
+<span class="fc" id="L52">                String name = parts[1].replace(&quot;\&quot;&quot;, &quot;&quot;);</span>
+<span class="fc" id="L53">                int attack = Integer.parseInt(parts[2]);</span>
+<span class="fc" id="L54">                int defense = Integer.parseInt(parts[3]);</span>
+<span class="fc" id="L55">                int stamina = Integer.parseInt(parts[4]);</span>
 
-<span class="fc" id="L61">                    pokemons.add(new PokemonMetadata(index, name, attack, defense, stamina));</span>
-                }
-<span class="fc" id="L63">            }</span>
-<span class="nc" id="L64">        } catch (IOException e) {</span>
-<span class="nc" id="L65">            e.printStackTrace();</span>
-<span class="fc" id="L66">        }</span>
+<span class="fc" id="L57">                pokemons.add(new PokemonMetadata(index, name, attack, defense, stamina));</span>
 
-<span class="fc" id="L68">        return pokemons;</span>
+<span class="fc" id="L59">            }</span>
+<span class="nc" id="L60">        } catch (IOException e) {</span>
+            //e.printStackTrace();
+<span class="fc" id="L62">        }</span>
+
+<span class="fc" id="L64">        return pokemons;</span>
     }
 }
 
