@@ -9,6 +9,11 @@
 [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://anis-saa77.github.io/ceri-m1-techniques-de-test/)
 
 ## Rapport Checkstyle
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/96/workflows/9b19a027-dba2-4591-b6cd-454ee7a45c21/jobs/116/artifacts)
+## Rapport Checkstyle
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/96/workflows/9b19a027-dba2-4591-b6cd-454ee7a45c21/jobs/116/artifacts)
 Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)]($ARTIFACTS_URL)
 
 
