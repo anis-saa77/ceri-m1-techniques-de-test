@@ -9,7 +9,7 @@
 [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://anis-saa77.github.io/ceri-m1-techniques-de-test/)
 
 ## Rapport Checkstyle
-Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](BLABLA)
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)]($ARTIFACTS_URL)
 
 
 ## Description du projet
