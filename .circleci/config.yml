@@ -22,7 +22,6 @@ jobs:
           command: mvn jacoco:report
       - codecov/upload: # Utilisation de l'orb Codecov pour télécharger les résultats de couverture
           file: target/site/jacoco/jacoco.xml
-
       - run:
           name: Run Checkstyle and Generate Report
           command: mvn checkstyle:check
@@ -30,6 +29,10 @@ jobs:
       - store_artifacts:
           path: target/checkstyle
           destination: checkstyle_reports
+
+      - github-pages/deploy: #Déploie la documentation sur gh-pages
+          branch: gh-pages
+          folder: target/site/jacoco
 
   update-readme:
     docker:
