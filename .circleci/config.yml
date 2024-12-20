@@ -57,13 +57,20 @@ jobs:
             if echo "$RESPONSE" | jq -e .items > /dev/null; then
               PIPELINE_ID=$(echo "$RESPONSE" | jq -r '.items[0].id')
               PIPELINE_NUMBER=$(echo "$RESPONSE" | jq -r '.items[0].number')
-              
-              # Générer l'URL des artefacts
-              ARTIFACTS_URL="https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/${PIPELINE_NUMBER}/artifacts"
-    
+          
+              # Récupérer l'ID du workflow du pipeline
+              WORKFLOW_ID=$(curl -s -H "Circle-Token: ${CIRCLECI_TOKEN}" \
+                "https://circleci.com/api/v2/pipeline/${PIPELINE_ID}/workflow" | jq -r '.items[0].id')
+          
+              # Récupérer l'ID du job spécifique dans ce workflow (choisis un job spécifique ici)
+              JOB_ID=$(curl -s -H "Circle-Token: ${CIRCLECI_TOKEN}" \
+                "https://circleci.com/api/v2/workflow/${WORKFLOW_ID}/job" | jq -r '.items[0].id')
+          
+              # Générer l'URL des artefacts du job spécifique
+              ARTIFACTS_URL="https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/${PIPELINE_NUMBER}/workflows/${WORKFLOW_ID}/jobs/${JOB_ID}/artifacts"
+          
               # Mettre à jour le README.md
               sed -i "s|# Rapport Checkstyle|# Rapport Checkstyle\n\nVoir le rapport Checkstyle des artefacts : $ARTIFACTS_URL|" README.md
-    
               echo "Lien vers les artefacts : $ARTIFACTS_URL"
             else
               echo "Erreur : La réponse de l'API ne contient pas de pipeline valide."
