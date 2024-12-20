@@ -70,7 +70,7 @@ jobs:
                   "https://circleci.com/api/v2/workflow/${WORKFLOW_ID}/job")
           
               # Afficher les jobs pour débogage
-              echo "Réponse Jobs : $JOBS_RESPONSE"
+              #echo "Réponse Jobs : $JOBS_RESPONSE"
           
               # Extraire le job number (en supposant qu'il y a au moins un job dans le workflow)
               JOB_NUMBER=$(echo "$JOBS_RESPONSE" | jq -r '.items[0].job_number')
@@ -83,7 +83,7 @@ jobs:
                 ARTIFACTS_URL="https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/${PIPELINE_NUMBER}/workflows/${WORKFLOW_ID}/jobs/${JOB_NUMBER}/artifacts"
             
                 # Mettre à jour le README.md
-                sed -i "s|# Rapport Checkstyle|# Rapport Checkstyle\n\nVoir le rapport Checkstyle des artefacts : $ARTIFACTS_URL|" README.md
+                sed -i "s|# Rapport Checkstyle|# Rapport Checkstyle\n\nVoir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)]($ARTIFACTS_URL)|" README.md
                 echo "Lien vers les artefacts : $ARTIFACTS_URL"
               fi
             else
