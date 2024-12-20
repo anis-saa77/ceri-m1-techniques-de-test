@@ -60,7 +60,7 @@ jobs:
           
               WORKFLOW_RESPONSE=$(curl -s -H "Circle-Token: ${CIRCLECI_TOKEN}" \
                   "https://circleci.com/api/v2/pipeline/${PIPELINE_ID}/workflow")
-              echo "Réponse workflow : $WORKFLOW_RESPONSE"
+              #echo "Réponse workflow : $WORKFLOW_RESPONSE"
             
               WORKFLOW_ID=$(echo "$WORKFLOW_RESPONSE" | jq -r '.items[0].id')
             
@@ -73,7 +73,7 @@ jobs:
               echo "Réponse Jobs : $JOBS_RESPONSE"
           
               # Extraire le job number (en supposant qu'il y a au moins un job dans le workflow)
-              JOB_NUMBER=$(echo "$JOBS_RESPONSE" | jq -r '.items[0].number')
+              JOB_NUMBER=$(echo "$JOBS_RESPONSE" | jq -r '.items[0].job_number')
           
               # Vérifier si JOB_NUMBER est vide
               if [ -z "$JOB_NUMBER" ]; then
