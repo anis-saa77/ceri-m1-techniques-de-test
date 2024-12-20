@@ -51,7 +51,7 @@ jobs:
               "https://circleci.com/api/v2/project/github/anis-saa77/ceri-m1-techniques-de-test/pipeline?limit=1&filter=successful")
 
             # Afficher la réponse JSON brute pour déboguer
-            echo "Réponse de l'API : $RESPONSE"
+            #echo "Réponse de l'API : $RESPONSE"
             
             # Vérifier si la réponse contient des erreurs
             if echo "$RESPONSE" | jq -e .items > /dev/null; then
@@ -60,7 +60,8 @@ jobs:
           
               WORKFLOW_RESPONSE=$(curl -s -H "Circle-Token: ${CIRCLECI_TOKEN}" \
                   "https://circleci.com/api/v2/pipeline/${PIPELINE_ID}/workflow")
-          
+              echo "Réponse workflow : WORKFLOW_RESPONSE"
+            
               WORKFLOW_ID=$(echo "$WORKFLOW_RESPONSE" | jq -r '.items[0].id')
           
               # Récupérer le job number du job spécifique dans ce workflow
