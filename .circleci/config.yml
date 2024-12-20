@@ -90,8 +90,7 @@ jobs:
                 
                 # Mettre à jour le README.md
                 chmod +w README.md
-                #sed -i "s|## Rapport Checkstyle|## Rapport Checkstyle\n\nVoir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)]($ARTIFACTS_URL)|p" README.md
-                sed -i "/## Rapport Checkstyle/{N;s|\(## Rapport Checkstyle\n\).*|\1Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)]($ARTIFACTS_URL)|p}" README.md
+                sed -i "/## Rapport Checkstyle/{N;s|\(## Rapport Checkstyle\n\).*|\1Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)]($ARTIFACTS_URL)|}" README.md
 
                 echo "Lien vers les artefacts : $ARTIFACTS_URL"
               fi
