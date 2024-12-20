@@ -25,7 +25,7 @@ jobs:
 
       - run:
           name: Run Checkstyle and Generate Report
-          command: mvn checkstyle:checkstyle
+          command: mvn checkstyle:check
 
       - store_artifacts:
           path: target/checkstyle
