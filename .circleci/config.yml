@@ -46,10 +46,6 @@ jobs:
               circleci step halt  
             fi
 
-#      - run:
-#          name: Add execute permissions to the script
-#          command: chmod +x ./update_readme.sh  # Ajouter les permissions d'exécution
-
       - run:
           name: Update README with Checkstyle report link
           command: chmod +x ./update_readme.sh
