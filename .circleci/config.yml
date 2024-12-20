@@ -41,9 +41,9 @@ jobs:
           command: |
             COMMIT_MESSAGE=$(git log -1 --pretty=%B)
             echo $COMMIT_MESSAGE
-            if [[ $COMMIT_MESSAGE =~ "Mise à jour automatique du lien Checkstyle dans README" ]]; then
+            if [[ $COMMIT_MESSAGE = "Mise à jour auto README" ]]; then
               echo "Commit message matches, skipping update-readme job."
-              exit 0  # Skipping the job if the commit message matches
+              circleci step halt  
             fi
 
 #      - run:
@@ -110,7 +110,7 @@ jobs:
 
             # Ajouter et committer les changements
             git add README.md
-            git commit -m "Mise à jour automatique du lien Checkstyle dans README"
+            git commit -m "Mise à jour auto README"
 
             # Pousser les modifications avec le token d'authentification
             git push origin master
