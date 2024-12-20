@@ -84,8 +84,8 @@ jobs:
                 
                 # Mettre à jour le README.md
                 chmod +w README.md
-                ls -l README.md
-                sed -i "s|## Rapport Checkstyle|## Rapport Checkstyle\n\nVoir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)]($ARTIFACTS_URL)|p" README.md
+                #sed -i "s|## Rapport Checkstyle|## Rapport Checkstyle\n\nVoir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)]($ARTIFACTS_URL)|p" README.md
+                sed -i "/## Rapport Checkstyle/{N;s|\(## Rapport Checkstyle\n\).*|\1Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)]($ARTIFACTS_URL)|p}" README.md
 
                 echo "Lien vers les artefacts : $ARTIFACTS_URL"
               fi
@@ -98,14 +98,14 @@ jobs:
           command: |
             git config --global user.email "anisamara777@gmail.com"
             git config --global user.name "anis-saa77"
-            
+
             # Mettre à jour l'URL du remote 'origin' avec l'authentification via GH_TOKEN
             git remote set-url origin https://$GH_TOKEN@github.com/anis-saa77/ceri-m1-techniques-de-test.git
-      
+
             # Ajouter et committer les changements
             git add README.md
             git commit -m "Mise à jour automatique du lien Checkstyle dans README"
-      
+
             # Pousser les modifications avec le token d'authentification
             git push origin master
     
@@ -121,6 +121,12 @@ workflows:
       - update-readme:
             requires:
               - build-and-test
+
+            filters:
+              branches:
+                only: master
+              commit_message:
+                not: /Mise à jour automatique du lien Checkstyle dans README/
 
 
 
