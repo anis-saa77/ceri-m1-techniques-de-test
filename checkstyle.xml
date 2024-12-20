@@ -5,6 +5,7 @@
 
 
 <module name="Checker">
+    <property name="severity" value="error"/>
     <!-- S'assurer que les classes suivent les conventions de nommage -->
     <module name="TreeWalker">
         <module name="ClassTypeParameterName"/>
