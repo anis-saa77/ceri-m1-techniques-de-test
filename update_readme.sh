@@ -1,5 +1,6 @@
 #!/bin/bash
 
+CIRCLECI_TOKEN="${CIRCLECI_TOKEN}"
 # Récupérer l'ID du dernier pipeline réussi
 PIPELINE_ID=$(curl -s -u ${CIRCLECI_TOKEN}: \
   "https://circleci.com/api/v2/project/github/anis-saa77/ceri-m1-techniques-de-test/pipeline?limit=1&filter=successful" | \
