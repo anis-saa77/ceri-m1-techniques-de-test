@@ -93,12 +93,12 @@ jobs:
             fi
 
       - run:
-        name: Ajouter et committer les changements dans README
-        command: |
-          git add README.md
-          git commit -m "Mise à jour du lien Checkstyle dans README"
-          git push origin master
-  
+          name: Ajouter et committer les changements dans README
+          command: |
+            git add README.md
+            git commit -m "Mise à jour du lien Checkstyle dans README"
+            git push origin master
+    
 
   # Récupérer le code pour s'assurer que tous les fichiers sont disponibles
 
