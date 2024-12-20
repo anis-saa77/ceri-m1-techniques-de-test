@@ -3,6 +3,7 @@ version: 2.1
 # Définir les orbs
 orbs:
   codecov: codecov/codecov@4.0.1
+  github-pages: circleci/github-pages@4.0.0
 
 # Définir un job pour compiler et tester l'application
 jobs:
