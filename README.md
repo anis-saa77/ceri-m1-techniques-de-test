@@ -8,6 +8,81 @@
 [![codecov](https://codecov.io/gh/anis-saa77/ceri-m1-techniques-de-test/graph/badge.svg?token=6THCFKTI18)](https://codecov.io/gh/anis-saa77/ceri-m1-techniques-de-test)
 
 ## Rapport Checkstyle
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/99/workflows/49a14a09-f6eb-4dff-b05b-ffb315ae838a/jobs/122/artifacts)
+## Rapport Checkstyle
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/99/workflows/49a14a09-f6eb-4dff-b05b-ffb315ae838a/jobs/122/artifacts)
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/98/workflows/5c00bdd6-9c3e-455a-abdb-22789ca9861a/jobs/120/artifacts)
+## Rapport Checkstyle
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/99/workflows/49a14a09-f6eb-4dff-b05b-ffb315ae838a/jobs/122/artifacts)
+## Rapport Checkstyle
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/99/workflows/49a14a09-f6eb-4dff-b05b-ffb315ae838a/jobs/122/artifacts)
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/98/workflows/5c00bdd6-9c3e-455a-abdb-22789ca9861a/jobs/120/artifacts)
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/97/workflows/897f5baa-16b7-4b14-8d5d-26ec50880244/jobs/118/artifacts)
+## Rapport Checkstyle
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/99/workflows/49a14a09-f6eb-4dff-b05b-ffb315ae838a/jobs/122/artifacts)
+## Rapport Checkstyle
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/99/workflows/49a14a09-f6eb-4dff-b05b-ffb315ae838a/jobs/122/artifacts)
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/98/workflows/5c00bdd6-9c3e-455a-abdb-22789ca9861a/jobs/120/artifacts)
+## Rapport Checkstyle
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/99/workflows/49a14a09-f6eb-4dff-b05b-ffb315ae838a/jobs/122/artifacts)
+## Rapport Checkstyle
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/99/workflows/49a14a09-f6eb-4dff-b05b-ffb315ae838a/jobs/122/artifacts)
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/98/workflows/5c00bdd6-9c3e-455a-abdb-22789ca9861a/jobs/120/artifacts)
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/97/workflows/897f5baa-16b7-4b14-8d5d-26ec50880244/jobs/118/artifacts)
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/96/workflows/9b19a027-dba2-4591-b6cd-454ee7a45c21/jobs/116/artifacts)
+## Rapport Checkstyle
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/99/workflows/49a14a09-f6eb-4dff-b05b-ffb315ae838a/jobs/122/artifacts)
+## Rapport Checkstyle
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/99/workflows/49a14a09-f6eb-4dff-b05b-ffb315ae838a/jobs/122/artifacts)
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/98/workflows/5c00bdd6-9c3e-455a-abdb-22789ca9861a/jobs/120/artifacts)
+## Rapport Checkstyle
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/99/workflows/49a14a09-f6eb-4dff-b05b-ffb315ae838a/jobs/122/artifacts)
+## Rapport Checkstyle
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/99/workflows/49a14a09-f6eb-4dff-b05b-ffb315ae838a/jobs/122/artifacts)
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/98/workflows/5c00bdd6-9c3e-455a-abdb-22789ca9861a/jobs/120/artifacts)
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/97/workflows/897f5baa-16b7-4b14-8d5d-26ec50880244/jobs/118/artifacts)
+## Rapport Checkstyle
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/99/workflows/49a14a09-f6eb-4dff-b05b-ffb315ae838a/jobs/122/artifacts)
+## Rapport Checkstyle
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/99/workflows/49a14a09-f6eb-4dff-b05b-ffb315ae838a/jobs/122/artifacts)
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/98/workflows/5c00bdd6-9c3e-455a-abdb-22789ca9861a/jobs/120/artifacts)
+## Rapport Checkstyle
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/99/workflows/49a14a09-f6eb-4dff-b05b-ffb315ae838a/jobs/122/artifacts)
+## Rapport Checkstyle
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/99/workflows/49a14a09-f6eb-4dff-b05b-ffb315ae838a/jobs/122/artifacts)
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/98/workflows/5c00bdd6-9c3e-455a-abdb-22789ca9861a/jobs/120/artifacts)
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/97/workflows/897f5baa-16b7-4b14-8d5d-26ec50880244/jobs/118/artifacts)
+
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/96/workflows/9b19a027-dba2-4591-b6cd-454ee7a45c21/jobs/116/artifacts)
 Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)]($ARTIFACTS_URL)
 
 
