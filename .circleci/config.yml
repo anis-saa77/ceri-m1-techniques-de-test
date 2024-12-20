@@ -52,7 +52,7 @@ jobs:
 
       - run:
           name: Update README with Checkstyle report link
-          command: ./update_readme.sh
+          command: chmod +x ./update_readme.sh
 
       - run:
           name: Ajouter et committer les changements dans README
