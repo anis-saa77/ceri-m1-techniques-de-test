@@ -39,7 +39,9 @@ jobs:
       - run:
           name: Check commit message
           command: |
-            if [[ $CIRCLE_COMMIT_MESSAGE =~ "Mise à jour automatique du lien Checkstyle dans README" ]]; then
+            COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+            echo $COMMIT_MESSAGE
+            if [[ $COMMIT_MESSAGE =~ "Mise à jour automatique du lien Checkstyle dans README" ]]; then
               echo "Commit message matches, skipping update-readme job."
               exit 0  # Skipping the job if the commit message matches
             fi
