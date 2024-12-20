@@ -27,36 +27,36 @@ jobs:
           name: Run Checkstyle and Generate Report
           command: mvn checkstyle:checkstyle
 
-      - run:
-          name: Deploy Checkstyle Report to GitHub Pages
-          command: |
-            # Configure les informations de l'utilisateur Git
-            git config --global user.email "anisamara777@gmail.com"
-            git config --global user.name "anis-saa77"
+#      - run:
+#          name: Deploy Checkstyle Report to GitHub Pages
+#          command: |
+#            # Configure les informations de l'utilisateur Git
+#            git config --global user.email "anisamara777@gmail.com"
+#            git config --global user.name "anis-saa77"
+#
+#            # Change de répertoire pour la branche gh-pages
+#            mkdir gh-pages
+#            cp target/checkstyle/index.html gh-pages/
+#
+#            # Change de répertoire pour la branche gh-pages
+#            cd gh-pages
+#
+#            # Initialisation d'un nouveau dépôt Git
+#            git init
 
-            # Change de répertoire pour la branche gh-pages
-            mkdir gh-pages
-            cp target/checkstyle/index.html gh-pages/
+#            # Ajouter le dépôt distant
+#            git remote add origin https://$GH_TOKEN@github.com/anis-saa77/ceri-m1-techniques-de-test.git
+#
+#            # Ajouter et valider les modifications
+#            git add index.html
+#            git commit -m "Update Checkstyle Report [skip ci]"
+#
+#            # Pousser les modifications vers la branche gh-pages
+#            git push --force origin master:gh-pages
 
-            # Change de répertoire pour la branche gh-pages
-            cd gh-pages
-
-            # Initialisation d'un nouveau dépôt Git
-            git init
-
-            # Ajouter le dépôt distant
-            git remote add origin https://$GH_TOKEN@github.com/anis-saa77/ceri-m1-techniques-de-test.git
-
-            # Ajouter et valider les modifications
-            git add index.html
-            git commit -m "Update Checkstyle Report [skip ci]"
-
-            # Pousser les modifications vers la branche gh-pages
-            git push --force origin master:gh-pages
-
-#      - store_artifacts:
-#          path: target/site
-#          destination: reports
+      - store_artifacts:
+          path: target/checkstyle
+          destination: checkstyle_reports
 
  # Récupérer le code pour s'assurer que tous les fichiers sont disponibles
 
