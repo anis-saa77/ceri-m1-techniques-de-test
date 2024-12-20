@@ -27,6 +27,36 @@ jobs:
           name: Run Checkstyle and Generate Report
           command: mvn checkstyle:checkstyle
 
+      - store_artifacts:
+          path: target/checkstyle
+          destination: checkstyle_reports
+
+  update-readme:
+    docker:
+      - image: cimg/openjdk:17.0
+    steps:
+      - checkout  # Récupérer le code
+      - run:
+          name: Update README with Checkstyle report link
+          command: ./update_readme.sh  # Appeler ton script pour mettre à jour le README
+          environment:
+            CIRCLECI_TOKEN: $CIRCLECI_TOKEN
+
+ # Récupérer le code pour s'assurer que tous les fichiers sont disponibles
+
+# Workflow pour orchestrer les jobs
+workflows:
+  version: 2
+  build-and-upload:
+    jobs:
+      - build-and-test  # Exécuter d'abord le job de construction et tests
+      - update-readme:
+            requires:
+              - build-and-test
+
+
+
+
 #      - run:
 #          name: Deploy Checkstyle Report to GitHub Pages
 #          command: |
@@ -53,16 +83,3 @@ jobs:
 #
 #            # Pousser les modifications vers la branche gh-pages
 #            git push --force origin master:gh-pages
-
-      - store_artifacts:
-          path: target/checkstyle
-          destination: checkstyle_reports
-
- # Récupérer le code pour s'assurer que tous les fichiers sont disponibles
-
-# Workflow pour orchestrer les jobs
-workflows:
-  version: 2
-  build-and-upload:
-    jobs:
-      - build-and-test  # Exécuter d'abord le job de construction et tests
