@@ -17,7 +17,9 @@ if echo "$RESPONSE" | jq -e .items > /dev/null; then
     ARTIFACTS_URL="https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/${PIPELINE_NUMBER}/artifacts"
 
     # Mettre à jour le README.md
-    sed -i "s|# Rapport Checkstyle|# Rapport Checkstyle\n\nVoir le rapport Checkstyle des artefacts : $ARTIFACTS_URL|" README.md
+    if ! sed -i "s|# Rapport Checkstyle|# Rapport Checkstyle\n\nVoir le rapport Checkstyle des artefacts : $ARTIFACTS_URL|" README.md; then
+      echo "Erreur : La commande sed a échoué"
+    fi
 
     echo "Lien vers les artefacts : $ARTIFACTS_URL"
 else
