@@ -37,20 +37,20 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Add execute permissions to the script
-          command: chmod +x ./update_readme.sh  # Ajouter les permissions d'exécution
+          name: Check commit message
+          command: |
+            if [[ "$CIRCLE_COMMIT_MESSAGE" =~ "Mise à jour automatique du lien Checkstyle dans README" ]]; then
+              echo "Commit message matches, skipping update-readme job."
+              exit 0  # Skipping the job if the commit message matches
+            fi
+
 #      - run:
-#          name: Update README with Checkstyle report link
-#          command: ./update_readme.sh  # Appeler le script de mise à jour du README
-#          environment:
-#            CIRCLECI_TOKEN: $CIRCLECI_API_TOKEN
+#          name: Add execute permissions to the script
+#          command: chmod +x ./update_readme.sh  # Ajouter les permissions d'exécution
+
       - run:
           name: Update README with Checkstyle report link
           command: |
-            if [[ "$CIRCLE_COMMIT_MESSAGE" =~ "Mise à jour automatique du lien Checkstyle dans README" ]]; then
-              exit 0
-            fi
-            
             RESPONSE=$(curl -s -u ${CIRCLECI_TOKEN}: \
               "https://circleci.com/api/v2/project/github/anis-saa77/ceri-m1-techniques-de-test/pipeline?limit=1&filter=successful")
 
@@ -100,10 +100,6 @@ jobs:
       - run:
           name: Ajouter et committer les changements dans README
           command: |
-            if [[ "$CIRCLE_COMMIT_MESSAGE" =~ "Mise à jour automatique du lien Checkstyle dans README" ]]; then
-              exit 0
-            fi
-            
             git config --global user.email "anisamara777@gmail.com"
             git config --global user.name "anis-saa77"
 
