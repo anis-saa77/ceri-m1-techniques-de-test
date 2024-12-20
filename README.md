@@ -10,9 +10,9 @@
 ## Rapport Checkstyle
 Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/114/workflows/79334787-4d09-43c1-a0c1-9fdb59359b3c/jobs/145/artifacts)
 
-## Description du projet
-
-Description du projet...
+### Explication du badge Checkstyle
+Le badge checkstyle redirige vers la page des artéfacts CircleCI du workflow courant, où le rapport pourra être retrouvé.
+Le fichier config.yml a été modifié pour que le lien du readme soit bien mis à jour à chaque push.
 
 ### Choix techniques
 
