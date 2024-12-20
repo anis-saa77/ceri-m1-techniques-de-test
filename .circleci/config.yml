@@ -35,10 +35,13 @@ jobs:
     docker:
       - image: cimg/openjdk:17.0
     steps:
-      - checkout  # Récupérer le code
+      - checkout
+      - run:
+          name: Add execute permissions to the script
+          command: chmod +x ./update_readme.sh  # Ajouter les permissions d'exécution
       - run:
           name: Update README with Checkstyle report link
-          command: ./update_readme.sh  # Appeler ton script pour mettre à jour le README
+          command: ./update_readme.sh  # Appeler le script de mise à jour du README
           environment:
             CIRCLECI_TOKEN: $CIRCLECI_TOKEN
 
