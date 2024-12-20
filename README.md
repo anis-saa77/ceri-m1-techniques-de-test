@@ -7,8 +7,9 @@
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/anis-saa77/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/anis-saa77/ceri-m1-techniques-de-test/tree/master)
 [![codecov](https://codecov.io/gh/anis-saa77/ceri-m1-techniques-de-test/graph/badge.svg?token=6THCFKTI18)](https://codecov.io/gh/anis-saa77/ceri-m1-techniques-de-test)
 [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://anis-saa77.github.io/ceri-m1-techniques-de-test/)
+
 ## Rapport Checkstyle
-Voir le rapport Checkstyle des artefacts : [Lien vers les artefacts](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/76/workflows/0001536d-4c20-4600-b4fe-566181c30494/jobs/78/artifacts)
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/BLABLABLA/workflows//jobs//artifacts)
 
 ## Description du projet
 

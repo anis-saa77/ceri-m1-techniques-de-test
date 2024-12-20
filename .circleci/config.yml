@@ -81,7 +81,7 @@ jobs:
               else 
                 # Générer l'URL des artefacts du job spécifique
                 ARTIFACTS_URL="https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/${PIPELINE_NUMBER}/workflows/${WORKFLOW_ID}/jobs/${JOB_NUMBER}/artifacts"
-            
+                chmod +w README.md
                 # Mettre à jour le README.md
                 sed -i "s|## Rapport Checkstyle|## Rapport Checkstyle\n\nVoir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)]($ARTIFACTS_URL)|" README.md
 
