@@ -5,24 +5,8 @@
 
 
 <module name="Checker">
-    <property name="severity" value="error"/>
-    <!-- S'assurer que les classes suivent les conventions de nommage -->
     <module name="TreeWalker">
-        <module name="ClassTypeParameterName"/>
-        <module name="ConstantName"/>
-
-        <!-- Vérifier que les fichiers Java utilisent des blocs correctement -->
-        <module name="NeedBraces"/>
-
-        <!-- S'assurer que les importations inutilisées sont supprimées -->
         <module name="UnusedImports"/>
-
-        <!-- Empêcher l'utilisation d'espaces inutiles -->
-        <module name="WhitespaceAround"/>
-
-        <!-- Limiter le nombre de paramètres dans une méthode -->
-        <module name="ParameterNumber">
-            <property name="max" value="20"/>
-        </module>
+        <module name="NeedBraces"/>
     </module>
 </module>

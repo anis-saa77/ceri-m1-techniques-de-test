@@ -12,7 +12,7 @@ Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io
 
 ### Explication du badge Checkstyle
 Le badge checkstyle redirige vers la page des artéfacts CircleCI du workflow courant, où le rapport pourra être retrouvé.
-Le fichier config.yml a été modifié pour que le lien du readme soit bien mis à jour à chaque push.
+Le fichier  config.yml a été modifié pour que le lien du readme soit bien mis à jour à chaque push.
 
 ### Choix techniques
 
