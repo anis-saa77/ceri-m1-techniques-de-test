@@ -43,7 +43,7 @@ jobs:
           name: Update README with Checkstyle report link
           command: ./update_readme.sh  # Appeler le script de mise à jour du README
           environment:
-            CIRCLECI_TOKEN: $CIRCLECI_TOKEN
+            CIRCLECI_TOKEN: $CIRCLECI_API_TOKEN
 
  # Récupérer le code pour s'assurer que tous les fichiers sont disponibles
 
