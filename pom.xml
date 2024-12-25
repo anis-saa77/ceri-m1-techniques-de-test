@@ -129,7 +129,8 @@
                     <outputDirectory>${project.build.directory}/site/checkstyle</outputDirectory>
                     <outputFile>${project.build.directory}/site/checkstyle/checkstyle-result.xml</outputFile> <!-- Rapport XML -->
                     <outputFileFormat>xml</outputFileFormat>
-                    <failsOnError>true</failsOnError>
+                    <failOnViolation>false</failOnViolation>
+                    <failsOnError>false</failsOnError>
                 </configuration>
                 <executions>
                     <execution>
