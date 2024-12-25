@@ -1,0 +1,48 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-classpath
+'/home/circleci/.m2/repository/org/apache/commons/commons-collections4/4.0/commons-collections4-4.0.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'17'
+-sourcepath
+'/home/circleci/project/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2024. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/circleci/project/target/site/javadoc/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Mon Projet Maven 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'Mon Projet Maven 1.0-SNAPSHOT API'
+fr.univavignon.pokedex.api
+/home/circleci/.m2/repository/org/apache/commons/commons-collections4/4.0/commons-collections4-4.0.jar = 1384987573000
+/home/circleci/project/src/main/java = 1735144235660
+/home/circleci/project/target/site/javadoc/apidocs/element-list = 1735144262876
+/home/circleci/project/target/site/javadoc/apidocs/serialized-form.html = 1735144262898
+/home/circleci/project/target/site/javadoc/apidocs/overview-tree.html = 1735144262947
+/home/circleci/project/target/site/javadoc/apidocs/allclasses-index.html = 1735144262959
+/home/circleci/project/target/site/javadoc/apidocs/allpackages-index.html = 1735144262961
+/home/circleci/project/target/site/javadoc/apidocs/module-search-index.js = 1735144262961
+/home/circleci/project/target/site/javadoc/apidocs/package-search-index.js = 1735144262961
+/home/circleci/project/target/site/javadoc/apidocs/type-search-index.js = 1735144262962
+/home/circleci/project/target/site/javadoc/apidocs/member-search-index.js = 1735144262962
+/home/circleci/project/target/site/javadoc/apidocs/tag-search-index.js = 1735144262962
+/home/circleci/project/target/site/javadoc/apidocs/index-all.html = 1735144262977
+/home/circleci/project/target/site/javadoc/apidocs/index.html = 1735144262979
+/home/circleci/project/target/site/javadoc/apidocs/help-doc.html = 1735144262982
+/home/circleci/project/target/site/javadoc/apidocs/stylesheet.css = 1735144262983
+/home/circleci/project/target/site/javadoc/apidocs/script.js = 1735144262983
+/home/circleci/project/target/site/javadoc/apidocs/search.js = 1735144262984
+/home/circleci/project/target/site/javadoc/apidocs/jquery-ui.overrides.css = 1735144262986
