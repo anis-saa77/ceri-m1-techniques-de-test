@@ -7,11 +7,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Utility class for loading Pokemon and Pokemon metadata from files.
+ * This class provides methods to load a list of {@link Pokemon} or {@link PokemonMetadata}
+ * from a given file resource.
+ */
 public class PokemonLoader {
 
+    /**
+     * Loads a list of {@link Pokemon} instances from a file.
+     * Each line of the file should represent a Pokemon, with fields separated by commas and spaces.
+     *
+     * @param filename The name of the file resource containing Pokemon data.
+     * @return A list of {@link Pokemon} instances loaded from the file.
+     */
     public List<Pokemon> loadPokemons(String filename) {
         List<Pokemon> pokemons = new ArrayList<>();
-
 
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(filename))))) {
@@ -33,14 +44,20 @@ public class PokemonLoader {
                 pokemons.add(new Pokemon(index, name, attack, defense, stamina, cp, hp, dust, candy, iv));
             }
         } catch (IOException e) {
-            //e.printStackTrace();
+            // Log or handle the exception appropriately
         }
         return pokemons;
     }
 
+    /**
+     * Loads a list of {@link PokemonMetadata} instances from a file.
+     * Each line of the file should represent Pokemon metadata, with fields separated by commas and spaces.
+     *
+     * @param filename The name of the file resource containing Pokemon metadata.
+     * @return A list of {@link PokemonMetadata} instances loaded from the file.
+     */
     public List<PokemonMetadata> loadPokemonsMetadata(String filename) {
         List<PokemonMetadata> pokemons = new ArrayList<>();
-
 
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(filename))))) {
@@ -55,13 +72,11 @@ public class PokemonLoader {
                 int stamina = Integer.parseInt(parts[4]);
 
                 pokemons.add(new PokemonMetadata(index, name, attack, defense, stamina));
-
             }
         } catch (IOException e) {
-            //e.printStackTrace();
+            // Log or handle the exception appropriately
         }
 
         return pokemons;
     }
 }
-
