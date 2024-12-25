@@ -47,7 +47,7 @@ jobs:
             cp -r target/site/javadoc/* .
             
             # Copier le rapport de checkstyle
-            mkdir -p docs/checkstyle
+            mkdir -p checkstyle
             cp -r target/site/checkstyle/* checkstyle/
             
             # Configurer les informations utilisateur Git
