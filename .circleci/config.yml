@@ -48,7 +48,7 @@ jobs:
             
             # Copier le rapport de checkstyle
             mkdir -p docs/checkstyle
-            cp -r target/checkstyle/* checkstyle/
+            cp -r target/site/checkstyle/* checkstyle/
             
             # Configurer les informations utilisateur Git
             git config --global user.name "CircleCI"
