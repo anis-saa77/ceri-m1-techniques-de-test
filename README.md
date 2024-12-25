@@ -6,7 +6,7 @@
 ## Badges
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/anis-saa77/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/anis-saa77/ceri-m1-techniques-de-test/tree/master)
 [![codecov](https://codecov.io/gh/anis-saa77/ceri-m1-techniques-de-test/graph/badge.svg?token=6THCFKTI18)](https://codecov.io/gh/anis-saa77/ceri-m1-techniques-de-test)
-
+[![Documentation](https://img.shields.io/website?url=https%3A%2F%2Fanis-saa77.github.io%2Fceri-m1-techniques-de-test%2F)](https://anis-saa77.github.io/ceri-m1-techniques-de-test/target/site/javadoc/apidocs)
 ## Rapport Checkstyle
 Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/135/workflows/2db13e56-90a6-4695-82bb-05612a83606d/jobs/174/artifacts)
 
