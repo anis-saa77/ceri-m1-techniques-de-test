@@ -8,7 +8,7 @@
 [![codecov](https://codecov.io/gh/anis-saa77/ceri-m1-techniques-de-test/graph/badge.svg?token=6THCFKTI18)](https://codecov.io/gh/anis-saa77/ceri-m1-techniques-de-test)
 
 ## Rapport Checkstyle
-Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/133/workflows/d2021a9f-4194-41ef-a757-5842e95f975f/jobs/170/artifacts)
+Voir le rapport Checkstyle des artefacts : [![Checkstyle](https://img.shields.io/badge/Checkstyle-passing-brightgreen)](https://app.circleci.com/pipelines/github/anis-saa77/ceri-m1-techniques-de-test/135/workflows/2db13e56-90a6-4695-82bb-05612a83606d/jobs/174/artifacts)
 
 ### Explication du badge Checkstyle
 Le badge checkstyle redirige vers la page des artéfacts CircleCI du workflow courant, où le rapport pourra être retrouvé.
