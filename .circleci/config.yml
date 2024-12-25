@@ -132,9 +132,9 @@ workflows:
   build-and-upload:
     jobs:
       - build-and-test  # Exécuter d'abord le job de construction et tests
-      - update-readme:
-            requires:
-              - build-and-test
-            filters:
-              branches:
-                only: master
+#      - update-readme:
+#            requires:
+#              - build-and-test
+#            filters:
+#              branches:
+#                only: master
