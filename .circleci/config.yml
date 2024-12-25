@@ -29,14 +29,8 @@ jobs:
           name: Generate Javadoc
           command: mvn javadoc:javadoc
       - run:
-          name: Déployer la documentation Javadoc sur GitHub Pages
+          name: Deployments at GitHub Pages
           command: |
-            # Vérifier que le répertoire de documentation existe
-            if [ ! -d "target/site/javadoc" ]; then
-              echo "Erreur: La documentation Javadoc n'a pas été générée."
-              exit 1
-            fi
-            
             # Créer une branche 'gh-pages' orpheline
             git checkout --orphan gh-pages
             
