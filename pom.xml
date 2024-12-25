@@ -127,7 +127,7 @@
                 <configuration>
                     <configLocation>checkstyle.xml</configLocation>
                     <outputDirectory>${project.build.directory}/site/checkstyle</outputDirectory>
-<!--                    <outputFile>target/checkstyle/checkstyle-result.xml</outputFile> &lt;!&ndash; Rapport XML &ndash;&gt;-->
+                    <outputFile>target/site/checkstyle/checkstyle-result.xml</outputFile> <!-- Rapport XML -->
                     <outputFileFormat>xml</outputFileFormat>
                     <failsOnError>true</failsOnError>
                 </configuration>
