@@ -24,7 +24,7 @@ jobs:
           file: target/site/jacoco/jacoco.xml
       - run:
           name: Run Checkstyle and Generate Report
-          command: mvn checkstyle:check
+          command: mvn checkstyle:checkstyle
       - run:
           name: Generate Javadoc
           command: mvn javadoc:javadoc
