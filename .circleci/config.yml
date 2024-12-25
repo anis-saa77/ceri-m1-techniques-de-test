@@ -29,24 +29,34 @@ jobs:
           name: Generate Javadoc
           command: mvn javadoc:javadoc
       - run:
-          name: Deploy to GitHub Pages
+          name: Déployer la documentation Javadoc sur GitHub Pages
           command: |
-#            git config --global user.email "anisamara777@gmail.com"
-#            git config --global user.name "anis-saa77"
-             git config --global user.name "CircleCI"
-             git config --global user.email "circleci@example.com"
-              
-             git checkout --orphan gh-pages
-             git rm -rf .  # Supprimer tous les fichiers actuels de la branche
-              
-              # Copier la documentation générée dans le répertoire approprié
-             cp -r target/site/javadoc/* .
-              
-              # Ajouter, committer et pousser les changements
-             git add .
-             git commit -m "Déployer la documentation Javadoc sur GitHub Pages"
-             git remote set-url origin https://$GH_TOKEN@github.com/anis-saa77/ceri-m1-techniques-de-test.git
-             git push --force --set-upstream origin gh-pages
+            # Vérifier que le répertoire de documentation existe
+            if [ ! -d "target/site/javadoc" ]; then
+              echo "Erreur: La documentation Javadoc n'a pas été générée."
+              exit 1
+            fi
+            
+            # Créer une branche 'gh-pages' orpheline
+            git checkout --orphan gh-pages
+            
+            # Supprimer tous les fichiers actuels de la branche
+            git rm -rf . 
+            
+            # Copier la documentation générée dans le répertoire approprié
+            cp -r target/site/javadoc/* .
+            
+            # Configurer les informations utilisateur Git
+            git config --global user.name "CircleCI"
+            git config --global user.email "circleci@example.com"  # Utilisation d'un e-mail générique
+            
+            # Ajouter, committer et pousser les changements
+            git add .
+            git commit -m "Déployer la documentation Javadoc sur GitHub Pages"
+            
+            # Utilisation du token pour pousser les changements sur GitHub Pages
+            git remote set-url origin https://$GH_TOKEN@github.com/anis-saa77/ceri-m1-techniques-de-test.git
+            git push --force --set-upstream origin gh-pages
 
       - store_artifacts:
           path: target/checkstyle
