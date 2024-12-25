@@ -46,6 +46,10 @@ jobs:
             # Copier la documentation générée dans le répertoire approprié
             cp -r target/site/javadoc/* .
             
+            # Copier le rapport de checkstyle
+            mkdir -p docs/checkstyle
+            cp -r target/checkstyle/* checkstyle/
+            
             # Configurer les informations utilisateur Git
             git config --global user.name "CircleCI"
             git config --global user.email "circleci@example.com"  # Utilisation d'un e-mail générique
@@ -57,10 +61,6 @@ jobs:
             # Utilisation du token pour pousser les changements sur GitHub Pages
             git remote set-url origin https://$GH_TOKEN@github.com/anis-saa77/ceri-m1-techniques-de-test.git
             git push --force --set-upstream origin gh-pages
-
-      - store_artifacts:
-          path: target/checkstyle
-          destination: checkstyle_reports
 
 #  update-readme:
 #    docker:
