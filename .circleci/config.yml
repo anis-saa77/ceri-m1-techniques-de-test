@@ -28,6 +28,20 @@ jobs:
       - run:
           name: Generate Javadoc
           command: mvn javadoc:javadoc
+      - run:
+          name: Deploy to GitHub Pages
+          command: |
+            # Créer une branche gh-pages si elle n'existe pas
+            git checkout --orphan gh-pages
+            git rm -rf .  # Supprimer tous les fichiers actuels de la branche
+            
+            # Copier la documentation générée dans le répertoire approprié
+            cp -r target/site/javadoc/* .
+            
+            # Ajouter, committer et pousser les changements
+            git add .
+            git commit -m "Déployer la documentation Javadoc sur GitHub Pages"
+            git push --force --set-upstream origin gh-pages
 
       - store_artifacts:
           path: target/checkstyle
