@@ -26,14 +26,13 @@ jobs:
       - run:
           name: Run Checkstyle and Generate Report
           command: mvn checkstyle:check
+      - run:
+          name: Generate Javadoc
+          command: mvn javadoc:javadoc
 
       - store_artifacts:
           path: target/checkstyle
           destination: checkstyle_reports
-
-      - github-pages/deploy: #Déploie la documentation sur gh-pages
-          branch: gh-pages
-          folder: target/site/jacoco
 
   update-readme:
     docker:
