@@ -155,7 +155,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <outputDirectory>javadoc</outputDirectory>
+                    <outputDirectory>${project.build.directory}/site/javadoc</outputDirectory>
                 </configuration>
             </plugin>
 
