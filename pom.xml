@@ -155,7 +155,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <destDir>javadoc</destDir>
+                    <outputDirectory>javadoc</outputDirectory>
                 </configuration>
             </plugin>
 
