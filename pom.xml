@@ -142,33 +142,6 @@
                 </executions>
             </plugin>
 
-            <!-- Plugin Exec pour convertir XML en HTML -->
-<!--            <plugin>-->
-<!--                <groupId>org.codehaus.mojo</groupId>-->
-<!--                <artifactId>exec-maven-plugin</artifactId>-->
-<!--                <version>3.1.0</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <goals>-->
-<!--                            <goal>exec</goal>-->
-<!--                        </goals>-->
-<!--                        <phase>verify</phase>-->
-<!--                        <configuration>-->
-<!--                            <executable>java</executable>-->
-<!--                            <arguments>-->
-<!--                                <argument>-jar</argument>-->
-<!--                                <argument>path/to/checkstyle.jar</argument> &lt;!&ndash; Chemin vers Checkstyle &ndash;&gt;-->
-<!--                                <argument>-f</argument>-->
-<!--                                <argument>html</argument>-->
-<!--                                <argument>-o</argument>-->
-<!--                                <argument>${project.build.directory}/site/checkstyle/checkstyle.html</argument>-->
-<!--                                <argument>${project.build.directory}/site/checkstyle/checkstyle-result.xml</argument>-->
-<!--                            </arguments>-->
-<!--                        </configuration>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
-
             <!--  Plugin pour la documentation-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -187,8 +160,6 @@
                     <outputDirectory>${project.build.directory}/site/javadoc</outputDirectory>
                 </configuration>
             </plugin>
-
-
         </plugins>
     </build>
 
