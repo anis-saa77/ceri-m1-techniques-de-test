@@ -10,7 +10,7 @@ public class PokemonFactory implements IPokemonFactory {
     /**
      * Instance of {@link PokemonMetadataProvider} used to retrieve metadata about Pokemon.
      */
-    private PokemonMetadataProvider metadataProvider = new PokemonMetadataProvider();
+    private IPokemonMetadataProvider metadataProvider = new PokemonMetadataProvider();
 
     /**
      * Creates a new {@link Pokemon} instance with the specified parameters.

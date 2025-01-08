@@ -7,15 +7,17 @@ import static org.junit.Assert.*;
 
 public class PokedexFactoryTest {
 
-    private PokedexFactory pokedexFactory;
+    private IPokedexFactory pokedexFactory;
     private IPokemonMetadataProvider metadataProvider;
-    private IPokemonFactory pokemonFactory;
+    private RocketPokemonFactory pokemonFactory;
 
     @Before
     public void setUp() {
         pokedexFactory = new PokedexFactory();
         metadataProvider = new PokemonMetadataProvider();
-        pokemonFactory = new PokemonFactory();
+        //pokemonFactory = new PokemonFactory();
+        pokemonFactory = new RocketPokemonFactory();
+
     }
 
     @Test

@@ -22,10 +22,10 @@ public class Pokedex implements IPokedex {
     private final List<Pokemon> pokemons = new ArrayList<>();
 
     /** Fournisseur de métadonnées de Pokémon */
-    private final PokemonMetadataProvider pokemonMetadataProvider;
+    private final IPokemonMetadataProvider pokemonMetadataProvider;
 
     /** Fabriquant de Pokémon */
-    private final PokemonFactory pokemonFactory;
+    private final IPokemonFactory pokemonFactory;
 
     /**
      * Constructeur de la classe {@code Pokedex}.
@@ -33,7 +33,7 @@ public class Pokedex implements IPokedex {
      * @param pokemonMetadataProvider le fournisseur de métadonnées de Pokémon
      * @param pokemonFactory le fabriquant de Pokémon
      */
-    public Pokedex(PokemonMetadataProvider pokemonMetadataProvider, PokemonFactory pokemonFactory){
+    public Pokedex(IPokemonMetadataProvider pokemonMetadataProvider, IPokemonFactory pokemonFactory){
         this.pokemonMetadataProvider = pokemonMetadataProvider;
         this.pokemonFactory = pokemonFactory;
     }

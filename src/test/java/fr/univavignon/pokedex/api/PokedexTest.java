@@ -1,6 +1,8 @@
 package fr.univavignon.pokedex.api;
 
 import org.junit.*;
+import org.junit.jupiter.api.BeforeEach;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -8,19 +10,38 @@ import java.util.List;
 import static org.junit.Assert.*;
 public class PokedexTest{
 
-    private PokemonMetadataProvider pokemonMetadataProvider = new PokemonMetadataProvider();
-    private PokemonFactory pokemonFactory = new PokemonFactory();
-
-;   private Pokedex pokedex = new Pokedex(pokemonMetadataProvider, pokemonFactory);
-    private PokemonLoader pokemonLoader = new PokemonLoader();
+    private PokemonLoader pokemonLoader;
     private List<Pokemon> pokemons ;
     private List<PokemonMetadata> pokemonsMetadata;
+    private IPokemonMetadataProvider pokemonMetadataProvider;
+    private IPokemonFactory pokemonFactory;
+
+;   private IPokedex pokedex;
 
     @Before
     public void setUp() {
+        pokemonLoader = new PokemonLoader();
         pokemons = pokemonLoader.loadPokemons("pokedexfile");
         pokemonsMetadata = pokemonLoader.loadPokemonsMetadata("pokedexfile");
+    }
+
+    @Before
+    public void pokedexSetUp() {
+        pokemonMetadataProvider = new PokemonMetadataProvider();
         pokemonFactory = new PokemonFactory();
+        pokedex = new Pokedex(pokemonMetadataProvider, pokemonFactory);
+    }
+
+    @Test
+    public void testConstructor(){
+        pokemonMetadataProvider = new PokemonMetadataProvider();
+        pokemonFactory = new PokemonFactory();
+        pokedex = new Pokedex(pokemonMetadataProvider, pokemonFactory);
+        assertNotNull(pokedex);
+
+        pokemonFactory = new RocketPokemonFactory();
+        pokedex = new Pokedex(pokemonMetadataProvider, pokemonFactory);
+        assertNotNull(pokedex);
     }
 
     @Test

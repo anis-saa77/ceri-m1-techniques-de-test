@@ -54,6 +54,7 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Dépendance fournie par la Team Rocket -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-collections4</artifactId>
@@ -61,13 +62,11 @@
         </dependency>
     </dependencies>
 
-    <!-- Configuration du cycle de vie (build et test) -->
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
         <testSourceDirectory>src/test/java</testSourceDirectory>
         <testResources>
             <testResource>
-                <!-- Inclure le dossier src/main/resources dans le classpath des tests -->
                 <directory>src/resources</directory>
             </testResource>
         </testResources>
@@ -136,7 +135,7 @@
                     <execution>
                         <phase>test</phase>
                         <goals>
-                            <goal>check</goal>
+                            <goal>checkstyle</goal>
                         </goals>
                     </execution>
                 </executions>
