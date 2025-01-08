@@ -32,7 +32,7 @@ Il a donc suffit d'ajouter de l'abstraction en modifiant le type des attributs p
 **Test Ajouté :**
 J'ai ajouté un test (dans PokedexTest) pour l'initialisation d'un pokedex à partir de différentes classes filles de IPokemonMetadataProvider et IPokemonFactory.
 
-### Défauts couvert par les test :
+### Défauts couverts par les test :
 L'implémentation ne passe pas les test d'indices invalides, aucune erreur n'est levée à l'utilisation d'un indice hors de l'intervalle.
 
 Aussi, certains test échouent car les statistiques des pokemons ne correspondent pas à celles qui sont attendues par mes tests. 

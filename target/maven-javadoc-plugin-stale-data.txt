@@ -1,0 +1,49 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-classpath
+'C:/Users/anisa/.m2/repository/org/apache/commons/commons-collections4/4.0/commons-collections4-4.0.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'17'
+-sourcepath
+'C:/Users/anisa/Documents/TP-M1/TP_TEST/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/anisa/Documents/TP-M1/TP_TEST/target/site/javadoc/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Mon Projet Maven 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'Mon Projet Maven 1.0-SNAPSHOT API'
+fr.univavignon.pokedex.api
+C:\Users\anisa\.m2\repository\org\apache\commons\commons-collections4\4.0\commons-collections4-4.0.jar = 1384987573000
+C:\Users\anisa\Documents\TP-M1\TP_TEST\src\main\java = 1734640817418
+C:\Users\anisa\Documents\TP-M1\TP_TEST\target\site\javadoc\apidocs\allclasses-index.html = 1736283420664
+C:\Users\anisa\Documents\TP-M1\TP_TEST\target\site\javadoc\apidocs\allpackages-index.html = 1736283420705
+C:\Users\anisa\Documents\TP-M1\TP_TEST\target\site\javadoc\apidocs\copy.svg = 1736283420774
+C:\Users\anisa\Documents\TP-M1\TP_TEST\target\site\javadoc\apidocs\element-list = 1736283420361
+C:\Users\anisa\Documents\TP-M1\TP_TEST\target\site\javadoc\apidocs\help-doc.html = 1736283420759
+C:\Users\anisa\Documents\TP-M1\TP_TEST\target\site\javadoc\apidocs\index-all.html = 1736283420748
+C:\Users\anisa\Documents\TP-M1\TP_TEST\target\site\javadoc\apidocs\index.html = 1736283420751
+C:\Users\anisa\Documents\TP-M1\TP_TEST\target\site\javadoc\apidocs\jquery-ui.overrides.css = 1736283420824
+C:\Users\anisa\Documents\TP-M1\TP_TEST\target\site\javadoc\apidocs\member-search-index.js = 1736283420715
+C:\Users\anisa\Documents\TP-M1\TP_TEST\target\site\javadoc\apidocs\module-search-index.js = 1736283420708
+C:\Users\anisa\Documents\TP-M1\TP_TEST\target\site\javadoc\apidocs\overview-tree.html = 1736283420614
+C:\Users\anisa\Documents\TP-M1\TP_TEST\target\site\javadoc\apidocs\package-search-index.js = 1736283420710
+C:\Users\anisa\Documents\TP-M1\TP_TEST\target\site\javadoc\apidocs\script.js = 1736283420772
+C:\Users\anisa\Documents\TP-M1\TP_TEST\target\site\javadoc\apidocs\search.js = 1736283420778
+C:\Users\anisa\Documents\TP-M1\TP_TEST\target\site\javadoc\apidocs\serialized-form.html = 1736283420417
+C:\Users\anisa\Documents\TP-M1\TP_TEST\target\site\javadoc\apidocs\stylesheet.css = 1736283420770
+C:\Users\anisa\Documents\TP-M1\TP_TEST\target\site\javadoc\apidocs\tag-search-index.js = 1736283420718
+C:\Users\anisa\Documents\TP-M1\TP_TEST\target\site\javadoc\apidocs\type-search-index.js = 1736283420713
