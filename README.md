@@ -18,19 +18,26 @@
 - **Javadoc** : Utilisation de **Javadoc** pour le déploiement de la documentation.
 
 ### Rapport TP6
-#### Défaut non couvert :
+### Défaut non couvert :
 L'implémentation de la team rocket RocketPokemonFactory a provoqué une erreur de cast (ClassCastException) due à la classe Pokedex dont les attributs n'était pas abstrait et des tests qui ne tenaient pas compte de cette éventualité.
 J'ai donc modifié mon code de manière à corriger le défaut et rajouter un test adéquat.
 
 **Précision :**
 Le problème vient plus précisément de la classe Pokedex dont les attributs étaient des classe fille (PokemonMetadataProvider et PokemonFactory), l'instanciation se faisait en castant les paramètres :  :
 new Pokedex((PokemonMetadataProvider) metadataProvider, (PokemonFactory) pokemonFactory);
+
 Forcément, l'utilisation de RocketPokemonFactory rentrait en conflit avec le cast de PokemonFactory.
 Il a donc suffit d'ajouter de l'abstraction en modifiant le type des attributs par les classes mères (IPokemonMetadataProvider et IPokemonFactory) afin de supporter toute les classes filles.
 
 **Test Ajouté :**
-J'ai ajouté un test (dans PokedexTest) pour l'initialisation d'un pokedex à partir de différente classes filles de IPokemonMetadataProvider et IPokemonFactory.
+J'ai ajouté un test (dans PokedexTest) pour l'initialisation d'un pokedex à partir de différentes classes filles de IPokemonMetadataProvider et IPokemonFactory.
 
-#### Défauts couvert par les test :
-L'implémentation ne passe pas les test d'indice invalide, aucune erreur n'est levé à l'utilisation d'un indice hors de l'intervalle.
-Aussi, des erreurs sont levées car les statistiques des pokemon ne sont pas celles attendues par mes tests. C'est normal car la team rocket les générent aléatoirement.
+### Défauts couvert par les test :
+L'implémentation ne passe pas les test d'indices invalides, aucune erreur n'est levée à l'utilisation d'un indice hors de l'intervalle.
+
+Aussi, certains test échouent car les statistiques des pokemons ne correspondent pas à celles qui sont attendues par mes tests. 
+C'est normal car la team rocket les générent aléatoirement, donc ici ce n'est pas forcément une erreur d'implémentation. 
+
+Si c'est bien le fonctionnement attendue, il serait nécessaire de modifier les tests. Je pourrais par exemple générer des valeurs aléatoires à partir de la même seed dans mes test.
+
+

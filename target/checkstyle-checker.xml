@@ -7,5 +7,22 @@
         <module name="AvoidStarImport"/>
         <module name="ConstantName"/>
         <module name="EmptyBlock"/>
+
+        <!-- Ensure proper indentation -->
+        <module name="Indentation">
+            <property name="basicOffset" value="4" />
+            <property name="braceAdjustment" value="0" />
+            <property name="caseIndent" value="4" />
+            <property name="lineWrappingIndentation" value="8" />
+        </module>
+
+        <!-- Detect and flag TODO comments -->
+        <module name="TodoComment" />
+
+        <!-- Flag magic numbers -->
+        <module name="MagicNumber">
+            <property name="ignoreNumbers" value="-1,0,1,2" />
+        </module>
     </module>
+
 </module>
